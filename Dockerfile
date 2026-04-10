@@ -1,12 +1,18 @@
 # =============================================
 # Stage 1: Build
 # =============================================
-FROM node:20-alpine AS builder
+FROM node:22-alpine AS builder
 
 WORKDIR /app
 
-# Copia dependências primeiro (cache layer)
-COPY package.json package-lock.json ./
+# Recebe variáveis de build do Railway (obrigatória: WHATSAPP_NUMBER)
+# Railway injeta automaticamente as env vars do projeto como build args
+ARG WHATSAPP_NUMBER
+ENV WHATSAPP_NUMBER=$WHATSAPP_NUMBER
+
+# Copia dependências + .npmrc primeiro (cache layer)
+# .npmrc precisa estar presente ANTES do npm ci para legacy-peer-deps funcionar
+COPY package.json package-lock.json .npmrc ./
 RUN npm ci
 
 # Copia o restante e builda
