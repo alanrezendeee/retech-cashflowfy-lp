@@ -205,7 +205,7 @@ const SITE_URL = "https://cashflowfy.com.br";
     <!-- =============================================
          NAVBAR — Sticky, translucent
          ============================================= -->
-    <header class="fixed top-0 left-0 right-0 z-50 border-b border-[#1a1a1a] backdrop-blur-md bg-[#0a0a0a]/80">
+    <header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-[#0a0a0a]/80">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
         <!-- Logo -->
         <a href="/" aria-label="CashFlowfy - Início" class="flex items-center gap-2 cursor-pointer">
@@ -243,6 +243,8 @@ const SITE_URL = "https://cashflowfy.com.br";
           Falar no WhatsApp
         </a>
       </div>
+      <!-- Neon divider na base do header — separa header do hero -->
+      <div class="neon-line" aria-hidden="true"></div>
     </header>
 
     <!-- =============================================
@@ -250,8 +252,6 @@ const SITE_URL = "https://cashflowfy.com.br";
          H1 otimizado para SEO
          ============================================= -->
     <section class="relative min-h-screen flex items-center pt-16 hero-glow grid-bg overflow-hidden" aria-labelledby="hero-heading">
-      <!-- Neon divider posicionado abaixo do header fixo (h-16 = 64px) -->
-      <div class="absolute top-16 left-0 right-0 neon-line" aria-hidden="true"></div>
       <!-- Decorative blobs -->
       <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-[#00FF88]/5 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
 
