@@ -3,7 +3,10 @@
 // BPO Financeiro Inteligente — SaaS + BPO Humano + IA
 import { WHATSAPP_NUMBER } from 'astro:env/server';
 
-const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20CashFlowfy`;
+const waUrl = (msg: string) =>
+  `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
+
+const WHATSAPP_URL = waUrl('Olá! Quero saber mais sobre o CashFlowfy.');
 const SITE_URL = "https://cashflowfy.com.br";
 ---
 
@@ -729,6 +732,7 @@ const SITE_URL = "https://cashflowfy.com.br";
                 '1 usuário',
               ],
               cta: 'Começar agora',
+              whatsappUrl: waUrl('Olá! Tenho interesse no plano Starter do CashFlowfy (R$ 497/mês). Pode me ajudar?'),
               highlight: false,
             },
             {
@@ -745,6 +749,7 @@ const SITE_URL = "https://cashflowfy.com.br";
                 '3 usuários',
               ],
               cta: 'Quero este plano',
+              whatsappUrl: waUrl('Olá! Tenho interesse no plano Growth do CashFlowfy (R$ 997/mês). Pode me ajudar?'),
               highlight: true,
               badge: 'Mais popular',
             },
@@ -762,6 +767,7 @@ const SITE_URL = "https://cashflowfy.com.br";
                 '5 usuários',
               ],
               cta: 'Começar agora',
+              whatsappUrl: waUrl('Olá! Tenho interesse no plano Scale do CashFlowfy (R$ 1.997/mês). Pode me ajudar?'),
               highlight: false,
             },
             {
@@ -778,6 +784,7 @@ const SITE_URL = "https://cashflowfy.com.br";
                 'Onboarding presencial',
               ],
               cta: 'Falar com consultor',
+              whatsappUrl: waUrl('Olá! Tenho interesse no plano Pro do CashFlowfy. Pode me apresentar uma proposta?'),
               highlight: false,
               dark: true,
             },
@@ -818,7 +825,7 @@ const SITE_URL = "https://cashflowfy.com.br";
               </ul>
 
               <a
-                href={WHATSAPP_URL}
+                href={plan.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 class={`w-full py-3 rounded-xl text-center font-semibold text-sm transition-all duration-200 cursor-pointer ${
