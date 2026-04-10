@@ -1,0 +1,1032 @@
+---
+// CashFlowfy Landing Page
+// BPO Financeiro Inteligente — SaaS + BPO Humano + IA
+const WHATSAPP_URL = "https://wa.me/5511999999999?text=Olá!%20Quero%20saber%20mais%20sobre%20o%20CashFlowfy";
+const SITE_URL = "https://cashflowfy.com.br";
+---
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <!-- =============================================
+         SEO: Meta tags otimizadas para Google e Ads
+         ============================================= -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Title otimizado para SEO — BPO Financeiro | Gestão Financeira -->
+    <title>CashFlowfy | BPO Financeiro Inteligente para Empresas — SaaS + IA + Execução Real</title>
+
+    <!-- Meta description com palavras-chave prioritárias -->
+    <meta
+      name="description"
+      content="CashFlowfy é o BPO financeiro inteligente para empresas. Terceirize sua gestão financeira com tecnologia, automação com IA e execução real. Contas a pagar e receber, fluxo de caixa e cobranças — tudo automatizado."
+    />
+
+    <!-- Keywords -->
+    <meta
+      name="keywords"
+      content="BPO financeiro, terceirização financeira, gestão financeira empresas, contas a pagar e receber, automação financeira, fluxo de caixa, BPO as a service, financeiro empresarial, controle financeiro"
+    />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={SITE_URL} />
+    <meta property="og:title" content="CashFlowfy | BPO Financeiro Inteligente — Seu financeiro no piloto automático" />
+    <meta property="og:description" content="SaaS + BPO humano + automação com IA. Nós organizamos, executamos e automatizamos seu financeiro — você só aprova." />
+    <meta property="og:image" content={`${SITE_URL}/og-image.png`} />
+    <meta property="og:locale" content="pt_BR" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="CashFlowfy | BPO Financeiro Inteligente" />
+    <meta name="twitter:description" content="Terceirize seu financeiro com tecnologia, BPO humano e automação com IA." />
+
+    <!-- Canonical -->
+    <link rel="canonical" href={SITE_URL} />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Google Fonts: Space Grotesk + Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Google Tag Manager (placeholder) -->
+    <!-- <script>(function(w,d,s,l,i){...})(window,document,'script','dataLayer','GTM-XXXXXX');</script> -->
+
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "CashFlowfy",
+        "description": "BPO Financeiro Inteligente — SaaS + BPO Humano + Automação com IA",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "offers": {
+          "@type": "Offer",
+          "price": "497",
+          "priceCurrency": "BRL"
+        },
+        "provider": {
+          "@type": "Organization",
+          "name": "The Retech",
+          "url": "https://theretech.com.br"
+        }
+      }
+    </script>
+
+    <style>
+      /* ============================================
+         Global styles
+         ============================================ */
+      * {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background-color: #0a0a0a;
+        color: #ffffff;
+        font-family: 'Inter', system-ui, sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      /* Neon text effect */
+      .neon-text {
+        color: #00FF88;
+        text-shadow: 0 0 12px rgba(0, 255, 136, 0.5);
+      }
+
+      /* Gradient neon line */
+      .neon-line {
+        height: 1px;
+        background: linear-gradient(90deg, transparent, #00FF88, transparent);
+      }
+
+      /* Grid pattern background */
+      .grid-bg {
+        background-image:
+          linear-gradient(rgba(0, 255, 136, 0.03) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(0, 255, 136, 0.03) 1px, transparent 1px);
+        background-size: 40px 40px;
+      }
+
+      /* Radial glow */
+      .hero-glow {
+        background: radial-gradient(ellipse 80% 50% at 50% -10%, rgba(0, 255, 136, 0.12), transparent);
+      }
+
+      /* Card hover */
+      .card-hover {
+        transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+      }
+      .card-hover:hover {
+        border-color: rgba(0, 255, 136, 0.4);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 30px rgba(0, 255, 136, 0.08);
+      }
+
+      /* Pill badge */
+      .badge-neon {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 6px 14px;
+        border-radius: 9999px;
+        border: 1px solid rgba(0, 255, 136, 0.3);
+        background: rgba(0, 255, 136, 0.05);
+        color: #00FF88;
+        font-size: 0.8rem;
+        font-weight: 500;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+      }
+
+      /* Scroll fade-in animation */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(24px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+      }
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* WhatsApp message bubble */
+      .bubble {
+        background: #1e1e1e;
+        border: 1px solid #2a2a2a;
+        border-radius: 0 12px 12px 12px;
+      }
+      .bubble-out {
+        background: rgba(0, 255, 136, 0.08);
+        border: 1px solid rgba(0, 255, 136, 0.2);
+        border-radius: 12px 0 12px 12px;
+        margin-left: auto;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .fade-in {
+          opacity: 1;
+          transform: none;
+          transition: none;
+        }
+        * {
+          animation-duration: 0.01ms !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="bg-[#0a0a0a] text-white overflow-x-hidden">
+
+    <!-- =============================================
+         NAVBAR — Sticky, translucent
+         ============================================= -->
+    <header class="fixed top-0 left-0 right-0 z-50 border-b border-[#1a1a1a] backdrop-blur-md bg-[#0a0a0a]/80">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
+        <!-- Logo -->
+        <a href="/" aria-label="CashFlowfy - Início" class="flex items-center gap-2 cursor-pointer">
+          <div class="w-8 h-8 rounded-lg bg-[#00FF88] flex items-center justify-center">
+            <svg viewBox="0 0 24 24" fill="none" class="w-5 h-5 text-black" aria-hidden="true">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" fill="currentColor"/>
+            </svg>
+          </div>
+          <span class="font-display font-700 text-lg tracking-tight text-white">Cash<span class="neon-text">Flowfy</span></span>
+        </a>
+
+        <!-- Nav Links — Desktop -->
+        <nav class="hidden md:flex items-center gap-8 text-sm text-gray-400" aria-label="Navegação principal">
+          <a href="#como-funciona" class="hover:text-white transition-colors duration-200 cursor-pointer">Como funciona</a>
+          <a href="#diferenciais" class="hover:text-white transition-colors duration-200 cursor-pointer">Diferenciais</a>
+          <a href="#planos" class="hover:text-white transition-colors duration-200 cursor-pointer">Planos</a>
+        </nav>
+
+        <!-- CTA Nav -->
+        <a
+          href={WHATSAPP_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#00FF88] text-black font-semibold text-sm hover:bg-[#00cc6a] transition-colors duration-200 cursor-pointer"
+          aria-label="Falar no WhatsApp"
+        >
+          <svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4" aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+            <path d="M12 0C5.373 0 0 5.373 0 12c0 2.137.558 4.14 1.535 5.875L.057 23.5l5.797-1.522A11.946 11.946 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.9 0-3.676-.497-5.21-1.367l-.373-.222-3.44.904.919-3.354-.241-.387A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+          </svg>
+          Falar no WhatsApp
+        </a>
+      </div>
+    </header>
+
+    <!-- =============================================
+         SEÇÃO 1: HERO — Extremamente forte
+         H1 otimizado para SEO
+         ============================================= -->
+    <section class="relative min-h-screen flex items-center pt-16 hero-glow grid-bg overflow-hidden" aria-labelledby="hero-heading">
+      <!-- Decorative blobs -->
+      <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-[#00FF88]/5 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
+
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-20 text-center">
+        <!-- Badge -->
+        <div class="flex justify-center mb-6 fade-in">
+          <span class="badge-neon">
+            <svg viewBox="0 0 24 24" fill="none" class="w-3.5 h-3.5" aria-hidden="true">
+              <circle cx="12" cy="12" r="3" fill="#00FF88"/>
+              <circle cx="12" cy="12" r="7" stroke="#00FF88" stroke-width="1.5" fill="none"/>
+            </svg>
+            BPO Financeiro Inteligente
+          </span>
+        </div>
+
+        <!-- H1 — SEO prioritário -->
+        <h1
+          id="hero-heading"
+          class="font-display font-extrabold text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight tracking-tight mb-6 fade-in"
+          style="animation-delay: 0.1s"
+        >
+          Seu financeiro no<br />
+          <span class="neon-text">piloto automático.</span>
+        </h1>
+
+        <!-- Subheadline -->
+        <p class="text-gray-400 text-lg sm:text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed mb-8 fade-in" style="animation-delay: 0.2s">
+          SaaS + BPO humano + automação com IA.<br class="hidden sm:block" />
+          Nós organizamos, executamos e automatizamos seu financeiro —<br class="hidden md:block" />
+          <strong class="text-white">você só aprova.</strong>
+        </p>
+
+        <!-- Bullets rápidos -->
+        <ul class="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-10 text-sm text-gray-400 fade-in" style="animation-delay: 0.3s" aria-label="Principais benefícios">
+          {[
+            'Pagamentos organizados e executados',
+            'Aprovação via WhatsApp',
+            'Automação com IA',
+            'Controle total sem esforço',
+          ].map((item) => (
+            <li class="flex items-center gap-2">
+              <svg viewBox="0 0 20 20" fill="none" class="w-4 h-4 shrink-0" aria-hidden="true">
+                <path d="M7 10l2.5 2.5L14 7" stroke="#00FF88" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="10" cy="10" r="8.5" stroke="#00FF88" stroke-width="1"/>
+              </svg>
+              {item}
+            </li>
+          ))}
+        </ul>
+
+        <!-- CTAs -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 fade-in" style="animation-delay: 0.4s">
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#00FF88] text-black font-bold text-base hover:bg-[#00cc6a] transition-all duration-200 shadow-[0_0_20px_rgba(0,255,136,0.4)] hover:shadow-[0_0_30px_rgba(0,255,136,0.6)] cursor-pointer"
+            aria-label="Quero organizar meu financeiro — falar no WhatsApp"
+          >
+            <svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5" aria-hidden="true">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+              <path d="M12 0C5.373 0 0 5.373 0 12c0 2.137.558 4.14 1.535 5.875L.057 23.5l5.797-1.522A11.946 11.946 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.9 0-3.676-.497-5.21-1.367l-.373-.222-3.44.904.919-3.354-.241-.387A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+            </svg>
+            Quero organizar meu financeiro
+          </a>
+          <a
+            href="#como-funciona"
+            class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl border border-[#2a2a2a] text-gray-300 font-medium text-base hover:border-[#00FF88]/40 hover:text-white transition-all duration-200 cursor-pointer"
+            aria-label="Entender como funciona"
+          >
+            Como funciona
+            <svg viewBox="0 0 20 20" fill="none" class="w-4 h-4" aria-hidden="true">
+              <path d="M10 4v12M4 10l6 6 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Social proof stats -->
+        <div class="mt-16 grid grid-cols-3 gap-4 max-w-md mx-auto border border-[#1e1e1e] rounded-2xl p-4 bg-[#111111]/50 fade-in" style="animation-delay: 0.5s" aria-label="Estatísticas">
+          {[
+            { value: '100%', label: 'Digital' },
+            { value: '24h', label: 'Ativação' },
+            { value: '0', label: 'Stress' },
+          ].map((stat) => (
+            <div class="text-center">
+              <div class="font-display font-bold text-2xl neon-text">{stat.value}</div>
+              <div class="text-gray-500 text-xs mt-0.5">{stat.label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================
+         SEÇÃO 2: PROBLEMA — Dores reais do cliente
+         H2 para SEO
+         ============================================= -->
+    <section class="py-24 border-t border-[#1a1a1a]" aria-labelledby="problema-heading">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <!-- Header -->
+        <div class="text-center mb-16 fade-in">
+          <span class="badge-neon mb-4 inline-flex">O problema</span>
+          <h2 id="problema-heading" class="font-display font-bold text-3xl sm:text-4xl md:text-5xl leading-tight mb-4">
+            Seu financeiro está<br />
+            <span class="text-red-400">te sabotando</span>
+          </h2>
+          <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+            A maioria das empresas perde dinheiro e oportunidades por não ter o financeiro organizado. Reconhece algum desses cenários?
+          </p>
+        </div>
+
+        <!-- Pain cards grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4" role="list" aria-label="Principais dores financeiras">
+          {[
+            {
+              icon: `<path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>`,
+              title: 'Contas perdidas',
+              desc: 'Boletos vencendo sem aviso, multas por esquecimento e cheque especial no fim do mês.',
+            },
+            {
+              icon: `<path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>`,
+              title: 'Falta de tempo',
+              desc: 'Você passa horas em planilhas quando deveria estar focado em crescer seu negócio.',
+            },
+            {
+              icon: `<path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>`,
+              title: 'Zero visibilidade',
+              desc: 'Sem saber o saldo real do caixa, você toma decisões no escuro e corre riscos desnecessários.',
+            },
+            {
+              icon: `<path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>`,
+              title: 'Inadimplência escondida',
+              desc: 'Clientes em atraso que você não cobra por falta de processo. Dinheiro parado que deveria estar no seu caixa.',
+            },
+          ].map((pain) => (
+            <div class="bg-[#111111] border border-[#1e1e1e] rounded-2xl p-6 card-hover" role="listitem">
+              <div class="w-10 h-10 rounded-lg bg-red-500/10 border border-red-500/20 flex items-center justify-center mb-4">
+                <svg viewBox="0 0 24 24" class="w-5 h-5 text-red-400" aria-hidden="true">
+                  <Fragment set:html={pain.icon} />
+                </svg>
+              </div>
+              <h3 class="font-display font-semibold text-white mb-2">{pain.title}</h3>
+              <p class="text-gray-400 text-sm leading-relaxed">{pain.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================
+         SEÇÃO 3: SOLUÇÃO — O que é o CashFlowfy
+         ============================================= -->
+    <section class="py-24 bg-[#0d0d0d] border-t border-b border-[#1a1a1a]" aria-labelledby="solucao-heading">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <!-- Left: text -->
+          <div class="fade-in">
+            <span class="badge-neon mb-6 inline-flex">A solução</span>
+            <h2 id="solucao-heading" class="font-display font-bold text-3xl sm:text-4xl md:text-5xl leading-tight mb-6">
+              Não é só sistema.<br />
+              Não é só consultoria.<br />
+              <span class="neon-text">É execução real.</span>
+            </h2>
+            <p class="text-gray-400 text-lg leading-relaxed mb-8">
+              O CashFlowfy é um <strong class="text-white">BPO Financeiro as a Service</strong> que combina plataforma inteligente, time especializado e automação com IA para cuidar do financeiro da sua empresa de ponta a ponta.
+            </p>
+            <ul class="space-y-4" aria-label="O que o CashFlowfy faz">
+              {[
+                'Organizamos e executamos todos os seus pagamentos',
+                'Realizamos cobranças e conciliações bancárias',
+                'Automatizamos alertas e aprovações via WhatsApp',
+                'Entregamos relatórios e visibilidade do fluxo de caixa',
+              ].map((item) => (
+                <li class="flex items-start gap-3 text-gray-300">
+                  <svg viewBox="0 0 20 20" fill="none" class="w-5 h-5 shrink-0 mt-0.5" aria-hidden="true">
+                    <path d="M7 10l2.5 2.5L14 7" stroke="#00FF88" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="10" cy="10" r="8.5" stroke="#00FF88" stroke-width="1"/>
+                  </svg>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <!-- Right: visual comparison card -->
+          <div class="fade-in">
+            <div class="bg-[#111111] border border-[#1e1e1e] rounded-2xl p-6 space-y-4">
+              <p class="text-gray-500 text-xs uppercase tracking-widest mb-4">CashFlowfy vs outros</p>
+              <div class="space-y-3">
+                {[
+                  { label: 'Só sistema (ERP)', checks: [true, false, false] },
+                  { label: 'Só consultoria', checks: [false, true, false] },
+                  { label: 'CashFlowfy BPO', checks: [true, true, true], highlight: true },
+                ].map((row) => (
+                  <div class={`flex items-center gap-3 p-3 rounded-xl ${row.highlight ? 'bg-[#00FF88]/5 border border-[#00FF88]/20' : 'bg-[#161616]'}`}>
+                    <span class={`text-sm font-medium flex-1 ${row.highlight ? 'text-white font-semibold' : 'text-gray-400'}`}>{row.label}</span>
+                    {['Plataforma', 'Execução', 'Automação IA'].map((col, i) => (
+                      <div class="flex flex-col items-center gap-1 min-w-[60px]">
+                        <span class="text-[10px] text-gray-600 hidden sm:block">{col}</span>
+                        <svg viewBox="0 0 20 20" fill="none" class={`w-5 h-5 ${row.checks[i] ? 'text-[#00FF88]' : 'text-[#2a2a2a]'}`} aria-label={row.checks[i] ? 'Sim' : 'Não'}>
+                          {row.checks[i]
+                            ? '<path d="M7 10l2.5 2.5L14 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="10" r="8.5" stroke="currentColor" stroke-width="1.5"/>'
+                            : '<circle cx="10" cy="10" r="8.5" stroke="currentColor" stroke-width="1.5"/><path d="M7 13l6-6M13 13L7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>'}
+                        </svg>
+                      </div>
+                    ))}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================
+         SEÇÃO 4: DIFERENCIAIS — Os 3 pilares
+         H2 com palavras-chave de BPO financeiro
+         ============================================= -->
+    <section id="diferenciais" class="py-24" aria-labelledby="diferenciais-heading">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-16 fade-in">
+          <span class="badge-neon mb-4 inline-flex">Por que somos diferentes</span>
+          <h2 id="diferenciais-heading" class="font-display font-bold text-3xl sm:text-4xl md:text-5xl leading-tight mb-4">
+            3 pilares que nenhum<br />
+            <span class="neon-text">concorrente tem junto</span>
+          </h2>
+          <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+            A combinação de tecnologia, pessoas e automação é o que torna o CashFlowfy único no mercado de gestão financeira empresarial.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6" role="list" aria-label="Os três pilares do CashFlowfy">
+          <!-- Pilar 1: SaaS -->
+          <div class="bg-[#111111] border border-[#1e1e1e] rounded-2xl p-8 card-hover group fade-in" role="listitem">
+            <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center mb-6">
+              <svg viewBox="0 0 24 24" fill="none" class="w-6 h-6 text-blue-400" aria-hidden="true">
+                <rect x="3" y="3" width="7" height="7" rx="1" stroke="currentColor" stroke-width="1.5"/>
+                <rect x="14" y="3" width="7" height="7" rx="1" stroke="currentColor" stroke-width="1.5"/>
+                <rect x="3" y="14" width="7" height="7" rx="1" stroke="currentColor" stroke-width="1.5"/>
+                <rect x="14" y="14" width="7" height="7" rx="1" stroke="currentColor" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <h3 class="font-display font-bold text-xl text-white mb-3">Plataforma SaaS</h3>
+            <p class="text-gray-400 text-sm leading-relaxed mb-6">
+              Painel limpo e intuitivo com todos os indicadores financeiros da sua empresa em tempo real. Sem complexidade, sem planilhas.
+            </p>
+            <ul class="space-y-2" aria-label="Funcionalidades da plataforma SaaS">
+              {['Dashboard com fluxo de caixa', 'Contas a pagar e receber', 'Relatórios automáticos', 'Indicadores em tempo real'].map((f) => (
+                <li class="flex items-center gap-2 text-sm text-gray-400">
+                  <span class="w-1.5 h-1.5 rounded-full bg-blue-400 shrink-0" aria-hidden="true"></span>
+                  {f}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <!-- Pilar 2: BPO Humano — destaque -->
+          <div class="bg-[#00FF88]/5 border border-[#00FF88]/25 rounded-2xl p-8 card-hover relative overflow-hidden fade-in" role="listitem" style="animation-delay: 0.1s">
+            <div class="absolute top-4 right-4">
+              <span class="text-[10px] font-semibold text-[#00FF88] bg-[#00FF88]/10 border border-[#00FF88]/20 px-2 py-1 rounded-full uppercase tracking-wider">Exclusivo</span>
+            </div>
+            <div class="w-12 h-12 rounded-xl bg-[#00FF88]/10 border border-[#00FF88]/20 flex items-center justify-center mb-6">
+              <svg viewBox="0 0 24 24" fill="none" class="w-6 h-6 text-[#00FF88]" aria-hidden="true">
+                <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="font-display font-bold text-xl text-white mb-3">BPO Humano</h3>
+            <p class="text-gray-400 text-sm leading-relaxed mb-6">
+              Um time financeiro dedicado cuida do operacional da sua empresa. Não é só software — é execução real com profissionais especializados.
+            </p>
+            <ul class="space-y-2" aria-label="Serviços do BPO humano">
+              {['Execução de pagamentos', 'Conciliação bancária', 'Cobrança de inadimplentes', 'Suporte e atendimento'].map((f) => (
+                <li class="flex items-center gap-2 text-sm text-gray-400">
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#00FF88] shrink-0" aria-hidden="true"></span>
+                  {f}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <!-- Pilar 3: Automação + IA -->
+          <div class="bg-[#111111] border border-[#1e1e1e] rounded-2xl p-8 card-hover fade-in" role="listitem" style="animation-delay: 0.2s">
+            <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center mb-6">
+              <svg viewBox="0 0 24 24" fill="none" class="w-6 h-6 text-purple-400" aria-hidden="true">
+                <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="font-display font-bold text-xl text-white mb-3">Automação + IA</h3>
+            <p class="text-gray-400 text-sm leading-relaxed mb-6">
+              Fluxos inteligentes com n8n e IA que eliminam o trabalho repetitivo, enviam alertas proativos e coletam aprovações pelo WhatsApp.
+            </p>
+            <ul class="space-y-2" aria-label="Funcionalidades de automação e IA">
+              {['Aprovações via WhatsApp', 'Alertas de vencimento', 'Fluxos n8n personalizados', 'Cobrança automática'].map((f) => (
+                <li class="flex items-center gap-2 text-sm text-gray-400">
+                  <span class="w-1.5 h-1.5 rounded-full bg-purple-400 shrink-0" aria-hidden="true"></span>
+                  {f}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================
+         SEÇÃO 5: COMO FUNCIONA — 4 passos simples
+         ============================================= -->
+    <section id="como-funciona" class="py-24 bg-[#0d0d0d] border-t border-b border-[#1a1a1a]" aria-labelledby="como-funciona-heading">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-16 fade-in">
+          <span class="badge-neon mb-4 inline-flex">Simples assim</span>
+          <h2 id="como-funciona-heading" class="font-display font-bold text-3xl sm:text-4xl md:text-5xl leading-tight mb-4">
+            Como funciona na prática
+          </h2>
+          <p class="text-gray-400 text-lg max-w-xl mx-auto">
+            Em 4 passos você transfere toda a operação financeira para o CashFlowfy e recupera seu tempo.
+          </p>
+        </div>
+
+        <ol class="relative space-y-0" aria-label="Passos para começar com o CashFlowfy">
+          {[
+            {
+              step: '01',
+              title: 'Você conecta suas informações',
+              desc: 'Acesso ao banco, contas e fornecedores. Nossa equipe configura tudo em até 24 horas.',
+              color: 'text-[#00FF88]',
+              border: 'border-[#00FF88]/30',
+            },
+            {
+              step: '02',
+              title: 'Organizamos tudo',
+              desc: 'Mapeamos pagamentos, recebimentos, inadimplência e fluxo de caixa com visibilidade total.',
+              color: 'text-blue-400',
+              border: 'border-blue-400/30',
+            },
+            {
+              step: '03',
+              title: 'Você aprova via WhatsApp',
+              desc: 'Recebe notificações e aprova ou rejeita pagamentos com um toque. Simples, seguro e rápido.',
+              color: 'text-purple-400',
+              border: 'border-purple-400/30',
+            },
+            {
+              step: '04',
+              title: 'Nós executamos',
+              desc: 'Pagamentos realizados, cobranças enviadas, relatórios entregues. Você só assiste os resultados.',
+              color: 'text-[#00FF88]',
+              border: 'border-[#00FF88]/30',
+            },
+          ].map((item, i) => (
+            <li class="flex gap-6 pb-12 relative fade-in" style={`animation-delay: ${i * 0.1}s`}>
+              <!-- Vertical line -->
+              {i < 3 && (
+                <div class="absolute left-6 top-12 bottom-0 w-px bg-[#1e1e1e]" aria-hidden="true"></div>
+              )}
+              <!-- Step number -->
+              <div class={`w-12 h-12 rounded-xl border ${item.border} bg-[#111111] flex items-center justify-center shrink-0 z-10`}>
+                <span class={`font-display font-bold text-sm ${item.color}`}>{item.step}</span>
+              </div>
+              <!-- Content -->
+              <div class="pt-2">
+                <h3 class="font-display font-semibold text-white text-lg mb-2">{item.title}</h3>
+                <p class="text-gray-400 leading-relaxed">{item.desc}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
+
+    <!-- =============================================
+         SEÇÃO 6: EXEMPLOS PRÁTICOS — WhatsApp UX
+         ============================================= -->
+    <section class="py-24" aria-labelledby="exemplos-heading">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-16 fade-in">
+          <span class="badge-neon mb-4 inline-flex">Na prática</span>
+          <h2 id="exemplos-heading" class="font-display font-bold text-3xl sm:text-4xl md:text-5xl leading-tight mb-4">
+            É assim que você vai<br />
+            <span class="neon-text">gerir seu financeiro</span>
+          </h2>
+          <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+            Alertas inteligentes, aprovações simples e visibilidade total — tudo no seu WhatsApp.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          {[
+            {
+              title: 'Aprovação de pagamento',
+              messages: [
+                { out: false, text: '💳 Conta vence HOJE\nFornecedor: Aluguel Comercial\nValor: R$ 4.200,00\n\nAprovar o pagamento agora?' },
+                { out: true, text: 'Sim, pode pagar' },
+                { out: false, text: '✅ Pagamento agendado!\nPrevisão: hoje até 17h' },
+              ],
+            },
+            {
+              title: 'Cobrança automática',
+              messages: [
+                { out: false, text: '⚠️ Cliente em atraso\nCliente X — Fatura 03/2025\nValor: R$ 1.850,00 (12 dias)\n\nEnviar cobrança agora?' },
+                { out: true, text: 'Sim, cobra com juros' },
+                { out: false, text: '📩 Cobrança enviada!\nWhatsApp + e-mail enviados.' },
+              ],
+            },
+            {
+              title: 'Alerta de caixa',
+              messages: [
+                { out: false, text: '🔴 Atenção: saldo projetado\nCaixa negativo em 7 dias\nSaldo atual: R$ 12.400\nSaídas previstas: R$ 18.900\n\nVer relatório completo?' },
+                { out: true, text: 'Quero ver o relatório' },
+                { out: false, text: '📊 Relatório enviado!\nAcesse o painel para ver projeções detalhadas.' },
+              ],
+            },
+          ].map((chat, ci) => (
+            <div class="bg-[#111111] border border-[#1e1e1e] rounded-2xl overflow-hidden card-hover fade-in" style={`animation-delay: ${ci * 0.1}s`}>
+              <!-- Chat header -->
+              <div class="flex items-center gap-3 p-4 border-b border-[#1e1e1e] bg-[#161616]">
+                <div class="w-8 h-8 rounded-full bg-[#00FF88] flex items-center justify-center shrink-0" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 text-black" aria-hidden="true">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-white text-sm font-medium">CashFlowfy Bot</p>
+                  <p class="text-[#00FF88] text-xs">online</p>
+                </div>
+              </div>
+              <!-- Messages -->
+              <div class="p-4 space-y-3 min-h-[220px]" role="log" aria-label={`Exemplo: ${chat.title}`}>
+                <p class="text-center text-gray-600 text-xs mb-2">{chat.title}</p>
+                {chat.messages.map((msg) => (
+                  <div class={msg.out ? 'bubble-out max-w-[85%] p-3' : 'bubble max-w-[85%] p-3'}>
+                    <p class="text-sm text-gray-200 whitespace-pre-line leading-relaxed">{msg.text}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================
+         SEÇÃO 7: PLANOS — Pricing
+         ============================================= -->
+    <section id="planos" class="py-24 bg-[#0d0d0d] border-t border-b border-[#1a1a1a]" aria-labelledby="planos-heading">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-16 fade-in">
+          <span class="badge-neon mb-4 inline-flex">Planos e preços</span>
+          <h2 id="planos-heading" class="font-display font-bold text-3xl sm:text-4xl md:text-5xl leading-tight mb-4">
+            Escolha o plano ideal<br />
+            <span class="neon-text">para o seu negócio</span>
+          </h2>
+          <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+            Todos os planos incluem plataforma SaaS, BPO humano e automação. Escale conforme crescer.
+          </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {[
+            {
+              name: 'Starter',
+              price: 'R$ 497',
+              period: '/mês',
+              desc: 'Para MEIs e empresas que estão começando a organizar o financeiro.',
+              features: [
+                'Plataforma SaaS',
+                'Até 30 lançamentos/mês',
+                'Alertas via WhatsApp',
+                'Suporte via chat',
+                '1 usuário',
+              ],
+              cta: 'Começar agora',
+              highlight: false,
+            },
+            {
+              name: 'Growth',
+              price: 'R$ 997',
+              period: '/mês',
+              desc: 'Para empresas em crescimento que precisam de execução real.',
+              features: [
+                'Tudo do Starter',
+                'BPO humano (execução)',
+                'Até 100 lançamentos/mês',
+                'Conciliação bancária',
+                'Cobranças automáticas',
+                '3 usuários',
+              ],
+              cta: 'Quero este plano',
+              highlight: true,
+              badge: 'Mais popular',
+            },
+            {
+              name: 'Scale',
+              price: 'R$ 1.997',
+              period: '/mês',
+              desc: 'Para empresas com operação financeira complexa.',
+              features: [
+                'Tudo do Growth',
+                'Lançamentos ilimitados',
+                'Fluxos n8n customizados',
+                'Relatórios avançados',
+                'Gestor dedicado',
+                '5 usuários',
+              ],
+              cta: 'Começar agora',
+              highlight: false,
+            },
+            {
+              name: 'Pro',
+              price: 'Sob consulta',
+              period: '',
+              desc: 'Para grupos empresariais com múltiplas CNPJs e alta demanda.',
+              features: [
+                'Tudo do Scale',
+                'Múltiplas empresas',
+                'SLA dedicado',
+                'Integrações customizadas',
+                'Usuários ilimitados',
+                'Onboarding presencial',
+              ],
+              cta: 'Falar com consultor',
+              highlight: false,
+              dark: true,
+            },
+          ].map((plan, pi) => (
+            <div
+              class={`relative rounded-2xl p-6 flex flex-col card-hover fade-in ${
+                plan.highlight
+                  ? 'bg-[#00FF88]/5 border-2 border-[#00FF88]/40 shadow-[0_0_40px_rgba(0,255,136,0.1)]'
+                  : plan.dark
+                  ? 'bg-[#111111] border border-[#2a2a2a]'
+                  : 'bg-[#111111] border border-[#1e1e1e]'
+              }`}
+              style={`animation-delay: ${pi * 0.08}s`}
+            >
+              {plan.badge && (
+                <div class="absolute -top-3 left-1/2 -translate-x-1/2">
+                  <span class="text-xs font-bold text-black bg-[#00FF88] px-3 py-1 rounded-full">{plan.badge}</span>
+                </div>
+              )}
+              <div class="mb-5">
+                <h3 class={`font-display font-bold text-lg mb-1 ${plan.highlight ? 'text-[#00FF88]' : 'text-white'}`}>{plan.name}</h3>
+                <div class="flex items-baseline gap-1 mb-2">
+                  <span class="font-display font-extrabold text-3xl text-white">{plan.price}</span>
+                  <span class="text-gray-500 text-sm">{plan.period}</span>
+                </div>
+                <p class="text-gray-400 text-sm leading-relaxed">{plan.desc}</p>
+              </div>
+
+              <ul class="space-y-2.5 mb-6 flex-1" aria-label={`Funcionalidades do plano ${plan.name}`}>
+                {plan.features.map((f) => (
+                  <li class="flex items-center gap-2 text-sm text-gray-300">
+                    <svg viewBox="0 0 16 16" fill="none" class={`w-4 h-4 shrink-0 ${plan.highlight ? 'text-[#00FF88]' : 'text-gray-500'}`} aria-hidden="true">
+                      <path d="M3 8l3 3 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    {f}
+                  </li>
+                ))}
+              </ul>
+
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                class={`w-full py-3 rounded-xl text-center font-semibold text-sm transition-all duration-200 cursor-pointer ${
+                  plan.highlight
+                    ? 'bg-[#00FF88] text-black hover:bg-[#00cc6a] shadow-[0_0_15px_rgba(0,255,136,0.3)]'
+                    : 'border border-[#2a2a2a] text-gray-300 hover:border-[#00FF88]/40 hover:text-white'
+                }`}
+                aria-label={`${plan.cta} — Plano ${plan.name}`}
+              >
+                {plan.cta}
+              </a>
+            </div>
+          ))}
+        </div>
+
+        <!-- Disclaimer -->
+        <p class="text-center text-gray-600 text-sm mt-8 fade-in">
+          Todos os planos com contrato mensal. Cancele a qualquer momento. Sem taxa de adesão.
+        </p>
+      </div>
+    </section>
+
+    <!-- =============================================
+         SEÇÃO 8: AUTORIDADE — Prova social
+         ============================================= -->
+    <section class="py-24" aria-labelledby="autoridade-heading">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-16 fade-in">
+          <span class="badge-neon mb-4 inline-flex">Por que confiar</span>
+          <h2 id="autoridade-heading" class="font-display font-bold text-3xl sm:text-4xl md:text-5xl leading-tight mb-4">
+            Construído para<br />
+            <span class="neon-text">empresas sérias</span>
+          </h2>
+        </div>
+
+        <!-- Trust pillars -->
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+          {[
+            {
+              icon: `<path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>`,
+              title: 'Segurança total',
+              desc: 'Dados criptografados, acesso por permissão e auditoria completa de todas as operações.',
+            },
+            {
+              icon: `<path d="M13 10V3L4 14h7v7l9-11h-7z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>`,
+              title: 'Ativação em 24h',
+              desc: 'Onboarding rápido e estruturado. Em menos de 24 horas sua operação já está rodando.',
+            },
+            {
+              icon: `<path d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>`,
+              title: 'Suporte especializado',
+              desc: 'Equipe financeira disponível para tirar dúvidas, ajustar processos e garantir sua operação.',
+            },
+            {
+              icon: `<path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>`,
+              title: 'Relatórios que fazem sentido',
+              desc: 'Dados claros e acionáveis. Saiba exatamente onde está seu dinheiro e para onde vai.',
+            },
+            {
+              icon: `<path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>`,
+              title: 'Escala com você',
+              desc: 'Começa pequeno, cresce junto. Os planos evoluem conforme a sua empresa cresce.',
+            },
+            {
+              icon: `<path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>`,
+              title: 'ROI garantido',
+              desc: 'Empresas que adotam BPO financeiro recuperam em média 15% do faturamento em pagamentos não cobrados.',
+            },
+          ].map((item, ti) => (
+            <div class="bg-[#111111] border border-[#1e1e1e] rounded-2xl p-6 card-hover fade-in" style={`animation-delay: ${ti * 0.08}s`}>
+              <div class="w-10 h-10 rounded-lg bg-[#00FF88]/8 border border-[#00FF88]/15 flex items-center justify-center mb-4">
+                <svg viewBox="0 0 24 24" class="w-5 h-5 text-[#00FF88]" aria-hidden="true">
+                  <Fragment set:html={item.icon} />
+                </svg>
+              </div>
+              <h3 class="font-display font-semibold text-white mb-2">{item.title}</h3>
+              <p class="text-gray-400 text-sm leading-relaxed">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+
+        <!-- Quote destaque -->
+        <div class="bg-[#111111] border border-[#00FF88]/20 rounded-2xl p-8 text-center max-w-3xl mx-auto fade-in">
+          <svg viewBox="0 0 24 24" fill="none" class="w-8 h-8 text-[#00FF88] mx-auto mb-4" aria-hidden="true">
+            <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z" fill="rgba(0,255,136,0.15)" stroke="#00FF88" stroke-width="1.5"/>
+            <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z" fill="rgba(0,255,136,0.15)" stroke="#00FF88" stroke-width="1.5"/>
+          </svg>
+          <p class="text-white text-lg sm:text-xl font-medium leading-relaxed mb-4">
+            "Você não precisa contratar um CFO. Você não precisa de uma equipe financeira interna. Você precisa do CashFlowfy."
+          </p>
+          <p class="text-gray-500 text-sm">— Time CashFlowfy</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================
+         SEÇÃO 9: CTA FINAL — Forte e direto
+         ============================================= -->
+    <section class="py-32 relative overflow-hidden" aria-labelledby="cta-final-heading">
+      <!-- Background glow -->
+      <div class="absolute inset-0 flex items-center justify-center pointer-events-none" aria-hidden="true">
+        <div class="w-[600px] h-[400px] bg-[#00FF88]/6 rounded-full blur-3xl"></div>
+      </div>
+      <div class="neon-line absolute top-0 left-0 right-0" aria-hidden="true"></div>
+
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center relative fade-in">
+        <span class="badge-neon mb-6 inline-flex">Pronto para começar?</span>
+        <h2 id="cta-final-heading" class="font-display font-extrabold text-4xl sm:text-5xl md:text-6xl leading-tight mb-6">
+          Deixe seu financeiro<br />
+          <span class="neon-text">com quem entende.</span>
+        </h2>
+        <p class="text-gray-400 text-xl leading-relaxed mb-10 max-w-2xl mx-auto">
+          Pare de perder tempo, dinheiro e energia com o financeiro da sua empresa. Ative o CashFlowfy hoje e veja a diferença em 7 dias.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-10 py-5 rounded-xl bg-[#00FF88] text-black font-bold text-lg hover:bg-[#00cc6a] transition-all duration-200 shadow-[0_0_30px_rgba(0,255,136,0.5)] hover:shadow-[0_0_50px_rgba(0,255,136,0.7)] cursor-pointer"
+            aria-label="Quero falar no WhatsApp com um especialista do CashFlowfy"
+          >
+            <svg viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6" aria-hidden="true">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+              <path d="M12 0C5.373 0 0 5.373 0 12c0 2.137.558 4.14 1.535 5.875L.057 23.5l5.797-1.522A11.946 11.946 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.9 0-3.676-.497-5.21-1.367l-.373-.222-3.44.904.919-3.354-.241-.387A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+            </svg>
+            Quero falar no WhatsApp
+          </a>
+          <a
+            href="#planos"
+            class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-10 py-5 rounded-xl border border-[#2a2a2a] text-gray-300 font-medium text-base hover:border-[#00FF88]/40 hover:text-white transition-all duration-200 cursor-pointer"
+            aria-label="Ver planos e preços do CashFlowfy"
+          >
+            Ver planos
+          </a>
+        </div>
+
+        <!-- Micro trust -->
+        <div class="flex flex-wrap justify-center gap-6 mt-10 text-sm text-gray-600" aria-label="Garantias">
+          {['Sem fidelidade', 'Cancele quando quiser', 'Ativação em 24h'].map((t) => (
+            <span class="flex items-center gap-2">
+              <svg viewBox="0 0 16 16" fill="none" class="w-4 h-4 text-[#00FF88]" aria-hidden="true">
+                <path d="M3 8l3 3 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              {t}
+            </span>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================
+         FOOTER — Discreto e profissional
+         ============================================= -->
+    <footer class="border-t border-[#1a1a1a] py-12 bg-[#0a0a0a]" role="contentinfo">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+          <!-- Logo -->
+          <div class="flex items-center gap-2">
+            <div class="w-7 h-7 rounded-lg bg-[#00FF88] flex items-center justify-center" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" class="w-4 h-4 text-black" aria-hidden="true">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" fill="currentColor"/>
+              </svg>
+            </div>
+            <span class="font-display font-bold text-white">Cash<span class="neon-text">Flowfy</span></span>
+          </div>
+
+          <!-- Links -->
+          <nav class="flex flex-wrap justify-center gap-6 text-sm text-gray-500" aria-label="Links do rodapé">
+            <a href="#como-funciona" class="hover:text-gray-300 transition-colors duration-200 cursor-pointer">Como funciona</a>
+            <a href="#diferenciais" class="hover:text-gray-300 transition-colors duration-200 cursor-pointer">Diferenciais</a>
+            <a href="#planos" class="hover:text-gray-300 transition-colors duration-200 cursor-pointer">Planos</a>
+            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" class="hover:text-gray-300 transition-colors duration-200 cursor-pointer">Contato</a>
+          </nav>
+
+          <!-- The Retech branding — discreto -->
+          <p class="text-gray-600 text-xs">
+            Produto da <a href="https://theretech.com.br" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-gray-300 transition-colors duration-200 cursor-pointer">The Retech</a>
+          </p>
+        </div>
+
+        <div class="neon-line mt-8 mb-6" aria-hidden="true"></div>
+
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-700">
+          <p>&copy; {new Date().getFullYear()} CashFlowfy. Todos os direitos reservados.</p>
+          <div class="flex gap-4">
+            <a href="/privacidade" class="hover:text-gray-500 transition-colors duration-200 cursor-pointer">Política de Privacidade</a>
+            <a href="/termos" class="hover:text-gray-500 transition-colors duration-200 cursor-pointer">Termos de Uso</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- =============================================
+         Floating WhatsApp button — mobile
+         ============================================= -->
+    <a
+      href={WHATSAPP_URL}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-[#00FF88] shadow-[0_0_20px_rgba(0,255,136,0.5)] flex items-center justify-center hover:bg-[#00cc6a] hover:shadow-[0_0_30px_rgba(0,255,136,0.7)] transition-all duration-200 cursor-pointer sm:hidden"
+      aria-label="Abrir WhatsApp"
+    >
+      <svg viewBox="0 0 24 24" fill="currentColor" class="w-7 h-7 text-black" aria-hidden="true">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+        <path d="M12 0C5.373 0 0 5.373 0 12c0 2.137.558 4.14 1.535 5.875L.057 23.5l5.797-1.522A11.946 11.946 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.9 0-3.676-.497-5.21-1.367l-.373-.222-3.44.904.919-3.354-.241-.387A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+      </svg>
+    </a>
+
+    <!-- =============================================
+         JavaScript: Scroll fade-in + intersection observer
+         ============================================= -->
+    <script>
+      // Intersection Observer para animações de scroll
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+      );
+
+      document.querySelectorAll('.fade-in').forEach((el) => {
+        observer.observe(el);
+      });
+    </script>
+  </body>
+</html>
