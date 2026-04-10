@@ -1,7 +1,9 @@
 ---
 // CashFlowfy Landing Page
 // BPO Financeiro Inteligente — SaaS + BPO Humano + IA
-const WHATSAPP_URL = "https://wa.me/5511999999999?text=Olá!%20Quero%20saber%20mais%20sobre%20o%20CashFlowfy";
+import { WHATSAPP_NUMBER } from 'astro:env/server';
+
+const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20CashFlowfy`;
 const SITE_URL = "https://cashflowfy.com.br";
 ---
 
