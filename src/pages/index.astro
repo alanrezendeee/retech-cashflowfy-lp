@@ -195,8 +195,12 @@ const SITE_URL = "https://cashflowfy.com.br";
         <!-- Logo -->
         <a href="/" aria-label="CashFlowfy - Início" class="flex items-center gap-2 cursor-pointer">
           <div class="w-8 h-8 rounded-lg bg-[#00FF88] flex items-center justify-center">
-            <svg viewBox="0 0 24 24" fill="none" class="w-5 h-5 text-black" aria-hidden="true">
-              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" fill="currentColor"/>
+            <svg viewBox="0 0 24 24" fill="none" class="w-5 h-5" aria-hidden="true">
+              <!-- Sparkline ascendente: representa fluxo e ganho financeiro -->
+              <polyline points="2,17 7,11 12,13.5 16.5,7" stroke="black" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+              <!-- Seta no topo direito indicando crescimento -->
+              <path d="M13.5 4.5H21V12" stroke="black" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+              <line x1="16.5" y1="7" x2="21" y2="4.5" stroke="black" stroke-width="2.2" stroke-linecap="round"/>
             </svg>
           </div>
           <span class="font-display font-700 text-lg tracking-tight text-white">Cash<span class="neon-text">Flowfy</span></span>
@@ -958,8 +962,10 @@ const SITE_URL = "https://cashflowfy.com.br";
           <!-- Logo -->
           <div class="flex items-center gap-2">
             <div class="w-7 h-7 rounded-lg bg-[#00FF88] flex items-center justify-center" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" class="w-4 h-4 text-black" aria-hidden="true">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" fill="currentColor"/>
+              <svg viewBox="0 0 24 24" fill="none" class="w-4 h-4" aria-hidden="true">
+                <polyline points="2,17 7,11 12,13.5 16.5,7" stroke="black" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M13.5 4.5H21V12" stroke="black" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                <line x1="16.5" y1="7" x2="21" y2="4.5" stroke="black" stroke-width="2.2" stroke-linecap="round"/>
               </svg>
             </div>
             <span class="font-display font-bold text-white">Cash<span class="neon-text">Flowfy</span></span>
