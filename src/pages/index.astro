@@ -31,7 +31,7 @@ const SITE_URL = "https://cashflowfy.com.br";
     <!-- Keywords -->
     <meta
       name="keywords"
-      content="BPO financeiro, terceirização financeira, gestão financeira empresas, contas a pagar e receber, automação financeira, fluxo de caixa, BPO as a service, financeiro empresarial, controle financeiro"
+      content="BPO financeiro, terceirização financeira, gestão financeira empresas, contas a pagar e receber, automação financeira, fluxo de caixa, BPO as a service, financeiro empresarial, controle financeiro, previsão de fluxo de caixa, pipeline de vendas financeiro, gestão de receita, previsão de caixa empresas"
     />
 
     <!-- Open Graph -->
@@ -296,6 +296,7 @@ const SITE_URL = "https://cashflowfy.com.br";
             'Aprovação via WhatsApp',
             'Automação com IA',
             'Controle total sem esforço',
+            'Previsão de receita futura integrada ao fluxo de caixa',
           ].map((item) => (
             <li class="flex items-center gap-2">
               <svg viewBox="0 0 20 20" fill="none" class="w-4 h-4 shrink-0" aria-hidden="true">
@@ -473,7 +474,7 @@ const SITE_URL = "https://cashflowfy.com.br";
     </section>
 
     <!-- =============================================
-         SEÇÃO 4: DIFERENCIAIS — Os 3 pilares
+         SEÇÃO 4: DIFERENCIAIS — Os 4 pilares
          H2 com palavras-chave de BPO financeiro
          ============================================= -->
     <section id="diferenciais" class="pt-16 pb-24" aria-labelledby="diferenciais-heading">
@@ -481,15 +482,15 @@ const SITE_URL = "https://cashflowfy.com.br";
         <div class="text-center mb-16 fade-in">
           <span class="badge-neon mb-4 inline-flex">Por que somos diferentes</span>
           <h2 id="diferenciais-heading" class="font-display font-bold text-3xl sm:text-4xl md:text-5xl leading-tight mb-4">
-            3 pilares que nenhum<br />
+            4 pilares que nenhum<br />
             <span class="neon-text">concorrente tem junto</span>
           </h2>
           <p class="text-gray-400 text-lg max-w-2xl mx-auto">
-            A combinação de tecnologia, pessoas e automação é o que torna o CashFlowfy único no mercado de gestão financeira empresarial.
+            Tecnologia, pessoas, automação e inteligência de receita — a combinação que transforma o financeiro em vantagem competitiva.
           </p>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-6" role="list" aria-label="Os três pilares do CashFlowfy">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6" role="list" aria-label="Os quatro pilares do CashFlowfy">
           <!-- Pilar 1: SaaS -->
           <div class="bg-[#111111] border border-[#1e1e1e] rounded-2xl p-8 card-hover group fade-in" role="listitem">
             <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center mb-6">
@@ -560,6 +561,28 @@ const SITE_URL = "https://cashflowfy.com.br";
               ))}
             </ul>
           </div>
+
+          <!-- Pilar 4: Pipeline de Receita -->
+          <div class="bg-[#111111] border border-[#1e1e1e] rounded-2xl p-8 card-hover fade-in" role="listitem" style="animation-delay: 0.3s">
+            <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mb-6">
+              <svg viewBox="0 0 24 24" fill="none" class="w-6 h-6 text-amber-400" aria-hidden="true">
+                <path d="M3 3v18h18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M7 16l4-4 4 4 4-8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="font-display font-bold text-xl text-white mb-3">Pipeline de Receita</h3>
+            <p class="text-gray-400 text-sm leading-relaxed mb-6">
+              Conecte seu funil de vendas ao fluxo de caixa. Preveja o que ainda vai entrar e tome decisões antes que o problema aconteça.
+            </p>
+            <ul class="space-y-2" aria-label="Funcionalidades do pipeline de receita">
+              {['Visualização de vendas futuras', 'Previsão de entradas no caixa', 'Integração automática ao financeiro', 'Alertas de risco antecipado'].map((f) => (
+                <li class="flex items-center gap-2 text-sm text-gray-400">
+                  <span class="w-1.5 h-1.5 rounded-full bg-amber-400 shrink-0" aria-hidden="true"></span>
+                  {f}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </section>
@@ -609,6 +632,13 @@ const SITE_URL = "https://cashflowfy.com.br";
               color: 'text-[#00FF88]',
               border: 'border-[#00FF88]/30',
             },
+            {
+              step: '05',
+              title: 'Sistema cruza receitas futuras com o caixa',
+              desc: 'O pipeline de vendas alimenta automaticamente a previsão de caixa — você vê o que está por vir antes de sentir o impacto.',
+              color: 'text-amber-400',
+              border: 'border-amber-400/30',
+            },
           ].map((item, i) => (
             <li class="flex gap-6 pb-12 relative fade-in" style={`animation-delay: ${i * 0.1}s`}>
               <!-- Vertical line -->
@@ -646,7 +676,7 @@ const SITE_URL = "https://cashflowfy.com.br";
           </p>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-6">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
             {
               title: 'Aprovação de pagamento',
@@ -670,6 +700,14 @@ const SITE_URL = "https://cashflowfy.com.br";
                 { out: false, text: '🔴 Atenção: saldo projetado\nCaixa negativo em 7 dias\nSaldo atual: R$ 12.400\nSaídas previstas: R$ 18.900\n\nVer relatório completo?' },
                 { out: true, text: 'Quero ver o relatório' },
                 { out: false, text: '📊 Relatório enviado!\nAcesse o painel para ver projeções detalhadas.' },
+              ],
+            },
+            {
+              title: 'Pipeline de receita',
+              messages: [
+                { out: false, text: '📈 Previsão de receita\nVocê tem R$ 45.000 em negociações abertas.\n\nMesmo assim, seu caixa ficará negativo em 10 dias.' },
+                { out: true, text: 'O que fazer?' },
+                { out: false, text: '💡 Cobrar o cliente X (R$ 8.200) pode evitar a falta de caixa. Deseja que enviemos a cobrança?' },
               ],
             },
           ].map((chat, ci) => (
@@ -702,7 +740,112 @@ const SITE_URL = "https://cashflowfy.com.br";
     </section>
 
     <!-- =============================================
-         SEÇÃO 7: PLANOS — Pricing
+         SEÇÃO 7: PREVISÃO DE RECEITA INTELIGENTE
+         Pipeline de receita integrado ao financeiro
+         ============================================= -->
+    <section class="pt-16 pb-24 bg-[#0d0d0d]" aria-labelledby="pipeline-heading">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <!-- Header -->
+        <div class="text-center mb-16 fade-in">
+          <span class="badge-neon mb-4 inline-flex">Inteligência financeira</span>
+          <h2 id="pipeline-heading" class="font-display font-bold text-3xl sm:text-4xl md:text-5xl leading-tight mb-6">
+            Previsão de receita<br />
+            <span class="neon-text">integrada ao seu caixa</span>
+          </h2>
+          <p class="text-gray-400 text-lg max-w-3xl mx-auto leading-relaxed">
+            "Além de cuidar do seu financeiro, ajudamos você a prever o que ainda vai entrar — conectando seu funil de vendas ao seu fluxo de caixa."
+          </p>
+        </div>
+
+        <!-- Dois blocos: antes x depois -->
+        <div class="grid md:grid-cols-2 gap-8 mb-16">
+          <!-- Sem CashFlowfy -->
+          <div class="bg-[#111111] border border-[#1e1e1e] rounded-2xl p-8 fade-in">
+            <p class="text-gray-500 text-xs uppercase tracking-widest mb-6">Sem o CashFlowfy</p>
+            <ul class="space-y-4">
+              {[
+                'Você só vê o que já saiu ou entrou',
+                'Caixa negativo te pega de surpresa',
+                'Decisão baseada em saldo atual',
+                'Vendas e financeiro vivem separados',
+              ].map((item) => (
+                <li class="flex items-start gap-3 text-gray-400 text-sm">
+                  <svg viewBox="0 0 20 20" fill="none" class="w-5 h-5 shrink-0 mt-0.5 text-red-500" aria-hidden="true">
+                    <circle cx="10" cy="10" r="8.5" stroke="currentColor" stroke-width="1.5"/>
+                    <path d="M7 13l6-6M13 13L7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  </svg>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <!-- Com CashFlowfy -->
+          <div class="bg-[#00FF88]/5 border border-[#00FF88]/25 rounded-2xl p-8 fade-in">
+            <p class="text-[#00FF88] text-xs uppercase tracking-widest mb-6">Com o CashFlowfy</p>
+            <ul class="space-y-4">
+              {[
+                'Vê o que está prestes a acontecer',
+                'Previsão de caixa com até 30 dias de antecedência',
+                'Decisão baseada em receita futura confirmada',
+                'Pipeline de vendas alimenta o fluxo de caixa automaticamente',
+              ].map((item) => (
+                <li class="flex items-start gap-3 text-gray-300 text-sm">
+                  <svg viewBox="0 0 20 20" fill="none" class="w-5 h-5 shrink-0 mt-0.5" aria-hidden="true">
+                    <path d="M7 10l2.5 2.5L14 7" stroke="#00FF88" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="10" cy="10" r="8.5" stroke="#00FF88" stroke-width="1"/>
+                  </svg>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <!-- 3 métricas do pipeline -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 fade-in">
+          {[
+            {
+              icon: `<path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>`,
+              label: 'Controle do pipeline de vendas',
+              desc: 'Visualize negociações abertas e o valor potencial que ainda vai entrar.',
+              color: 'text-amber-400',
+              bg: 'bg-amber-500/10',
+              border: 'border-amber-500/20',
+            },
+            {
+              icon: `<path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>`,
+              label: 'Previsão de recebimentos',
+              desc: 'Saiba exatamente quando cada venda deve virar dinheiro no caixa.',
+              color: 'text-[#00FF88]',
+              bg: 'bg-[#00FF88]/10',
+              border: 'border-[#00FF88]/20',
+            },
+            {
+              icon: `<path d="M13 10V3L4 14h7v7l9-11h-7z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>`,
+              label: 'Impacto direto no fluxo de caixa',
+              desc: 'O sistema alerta quando uma venda em andamento pode evitar um caixa negativo.',
+              color: 'text-blue-400',
+              bg: 'bg-blue-500/10',
+              border: 'border-blue-500/20',
+            },
+          ].map((card) => (
+            <div class="bg-[#111111] border border-[#1e1e1e] rounded-2xl p-6 card-hover">
+              <div class={`w-10 h-10 rounded-lg ${card.bg} border ${card.border} flex items-center justify-center mb-4`}>
+                <svg viewBox="0 0 24 24" class={`w-5 h-5 ${card.color}`} aria-hidden="true">
+                  <Fragment set:html={card.icon} />
+                </svg>
+              </div>
+              <h3 class="font-display font-semibold text-white text-sm mb-2">{card.label}</h3>
+              <p class="text-gray-400 text-sm leading-relaxed">{card.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================
+         SEÇÃO 8: PLANOS — Pricing
          ============================================= -->
     <section id="planos" class="pt-16 pb-24 bg-[#0d0d0d]" aria-labelledby="planos-heading">
       <div class="max-w-6xl mx-auto px-4 sm:px-6">
@@ -761,8 +904,9 @@ const SITE_URL = "https://cashflowfy.com.br";
               features: [
                 'Tudo do Growth',
                 'Lançamentos ilimitados',
+                'Pipeline de receita (kanban)',
+                'Previsão de entradas no caixa',
                 'Fluxos n8n customizados',
-                'Relatórios avançados',
                 'Gestor dedicado',
                 '5 usuários',
               ],
@@ -778,6 +922,8 @@ const SITE_URL = "https://cashflowfy.com.br";
               features: [
                 'Tudo do Scale',
                 'Múltiplas empresas',
+                'Previsões avançadas de receita',
+                'Alertas baseados em receita futura',
                 'SLA dedicado',
                 'Integrações customizadas',
                 'Usuários ilimitados',
