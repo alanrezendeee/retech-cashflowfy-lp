@@ -109,14 +109,18 @@ const SITE_URL = "https://cashflowfy.com.br";
       }
 
       /* Neon line automática no topo de cada seção */
+      section {
+        position: relative;
+      }
+
       section::before {
         content: '';
-        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
         height: 1px;
         background: linear-gradient(90deg, transparent, #00FF88, transparent);
-        align-self: flex-start; /* garante topo mesmo em sections flex */
-        width: 100%;
-        flex-shrink: 0;
       }
 
       /* Grid pattern background */
@@ -345,7 +349,7 @@ const SITE_URL = "https://cashflowfy.com.br";
          SEÇÃO 2: PROBLEMA — Dores reais do cliente
          H2 para SEO
          ============================================= -->
-    <section class="py-24" aria-labelledby="problema-heading">
+    <section class="pt-16 pb-24" aria-labelledby="problema-heading">
       <div class="max-w-6xl mx-auto px-4 sm:px-6">
         <!-- Header -->
         <div class="text-center mb-16 fade-in">
@@ -400,7 +404,7 @@ const SITE_URL = "https://cashflowfy.com.br";
     <!-- =============================================
          SEÇÃO 3: SOLUÇÃO — O que é o CashFlowfy
          ============================================= -->
-    <section class="py-24 bg-[#0d0d0d]" aria-labelledby="solucao-heading">
+    <section class="pt-16 pb-24 bg-[#0d0d0d]" aria-labelledby="solucao-heading">
       <div class="max-w-6xl mx-auto px-4 sm:px-6">
         <div class="grid lg:grid-cols-2 gap-16 items-center">
           <!-- Left: text -->
@@ -467,7 +471,7 @@ const SITE_URL = "https://cashflowfy.com.br";
          SEÇÃO 4: DIFERENCIAIS — Os 3 pilares
          H2 com palavras-chave de BPO financeiro
          ============================================= -->
-    <section id="diferenciais" class="py-24" aria-labelledby="diferenciais-heading">
+    <section id="diferenciais" class="pt-16 pb-24" aria-labelledby="diferenciais-heading">
       <div class="max-w-6xl mx-auto px-4 sm:px-6">
         <div class="text-center mb-16 fade-in">
           <span class="badge-neon mb-4 inline-flex">Por que somos diferentes</span>
@@ -558,7 +562,7 @@ const SITE_URL = "https://cashflowfy.com.br";
     <!-- =============================================
          SEÇÃO 5: COMO FUNCIONA — 4 passos simples
          ============================================= -->
-    <section id="como-funciona" class="py-24 bg-[#0d0d0d]" aria-labelledby="como-funciona-heading">
+    <section id="como-funciona" class="pt-16 pb-24 bg-[#0d0d0d]" aria-labelledby="como-funciona-heading">
       <div class="max-w-4xl mx-auto px-4 sm:px-6">
         <div class="text-center mb-16 fade-in">
           <span class="badge-neon mb-4 inline-flex">Simples assim</span>
@@ -624,7 +628,7 @@ const SITE_URL = "https://cashflowfy.com.br";
     <!-- =============================================
          SEÇÃO 6: EXEMPLOS PRÁTICOS — WhatsApp UX
          ============================================= -->
-    <section class="py-24" aria-labelledby="exemplos-heading">
+    <section class="pt-16 pb-24" aria-labelledby="exemplos-heading">
       <div class="max-w-6xl mx-auto px-4 sm:px-6">
         <div class="text-center mb-16 fade-in">
           <span class="badge-neon mb-4 inline-flex">Na prática</span>
@@ -695,7 +699,7 @@ const SITE_URL = "https://cashflowfy.com.br";
     <!-- =============================================
          SEÇÃO 7: PLANOS — Pricing
          ============================================= -->
-    <section id="planos" class="py-24 bg-[#0d0d0d]" aria-labelledby="planos-heading">
+    <section id="planos" class="pt-16 pb-24 bg-[#0d0d0d]" aria-labelledby="planos-heading">
       <div class="max-w-6xl mx-auto px-4 sm:px-6">
         <div class="text-center mb-16 fade-in">
           <span class="badge-neon mb-4 inline-flex">Planos e preços</span>
@@ -838,7 +842,7 @@ const SITE_URL = "https://cashflowfy.com.br";
     <!-- =============================================
          SEÇÃO 8: AUTORIDADE — Prova social
          ============================================= -->
-    <section class="py-24" aria-labelledby="autoridade-heading">
+    <section class="pt-16 pb-24" aria-labelledby="autoridade-heading">
       <div class="max-w-6xl mx-auto px-4 sm:px-6">
         <div class="text-center mb-16 fade-in">
           <span class="badge-neon mb-4 inline-flex">Por que confiar</span>
@@ -911,7 +915,7 @@ const SITE_URL = "https://cashflowfy.com.br";
     <!-- =============================================
          SEÇÃO 9: CTA FINAL — Forte e direto
          ============================================= -->
-    <section class="py-32 relative overflow-hidden" aria-labelledby="cta-final-heading">
+    <section class="pt-16 pb-32 relative overflow-hidden" aria-labelledby="cta-final-heading">
       <!-- Background glow -->
       <div class="absolute inset-0 flex items-center justify-center pointer-events-none" aria-hidden="true">
         <div class="w-[600px] h-[400px] bg-[#00FF88]/6 rounded-full blur-3xl"></div>
