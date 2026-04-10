@@ -222,10 +222,10 @@ const SITE_URL = "https://cashflowfy.com.br";
         </a>
 
         <!-- Nav Links — Desktop -->
-        <nav class="hidden md:flex items-center gap-8 text-sm text-gray-400" aria-label="Navegação principal">
-          <a href="#como-funciona" class="hover:text-white transition-colors duration-200 cursor-pointer">Como funciona</a>
-          <a href="#diferenciais" class="hover:text-white transition-colors duration-200 cursor-pointer">Diferenciais</a>
-          <a href="#planos" class="hover:text-white transition-colors duration-200 cursor-pointer">Planos</a>
+        <nav class="hidden md:flex items-center gap-8" aria-label="Navegação principal">
+          <a href="#como-funciona" class="font-display font-medium text-[15px] text-gray-300 hover:text-white hover:tracking-wide transition-all duration-200 cursor-pointer">Como funciona</a>
+          <a href="#diferenciais" class="font-display font-medium text-[15px] text-gray-300 hover:text-white hover:tracking-wide transition-all duration-200 cursor-pointer">Diferenciais</a>
+          <a href="#planos" class="font-display font-medium text-[15px] text-gray-300 hover:text-white hover:tracking-wide transition-all duration-200 cursor-pointer">Planos</a>
         </nav>
 
         <!-- CTA Nav -->
@@ -1032,6 +1032,19 @@ const SITE_URL = "https://cashflowfy.com.br";
     </a>
 
     <!-- =============================================
+         Botão scroll-to-top — lado esquerdo
+         ============================================= -->
+    <button
+      id="scroll-top"
+      aria-label="Voltar ao topo"
+      class="fixed bottom-6 left-6 z-50 w-11 h-11 rounded-full border border-[#2a2a2a] bg-[#111111]/90 backdrop-blur-sm text-gray-400 flex items-center justify-center opacity-0 pointer-events-none transition-all duration-300 hover:border-[#00FF88]/50 hover:text-[#00FF88] hover:shadow-[0_0_15px_rgba(0,255,136,0.2)] cursor-pointer"
+    >
+      <svg viewBox="0 0 24 24" fill="none" class="w-5 h-5" aria-hidden="true">
+        <path d="M12 19V5M5 12l7-7 7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+
+    <!-- =============================================
          JavaScript: Scroll fade-in + intersection observer
          ============================================= -->
     <script>
@@ -1050,6 +1063,22 @@ const SITE_URL = "https://cashflowfy.com.br";
 
       document.querySelectorAll('.fade-in').forEach((el) => {
         observer.observe(el);
+      });
+
+      // Scroll-to-top button
+      const scrollBtn = document.getElementById('scroll-top');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 400) {
+          scrollBtn.classList.remove('opacity-0', 'pointer-events-none');
+          scrollBtn.classList.add('opacity-100');
+        } else {
+          scrollBtn.classList.add('opacity-0', 'pointer-events-none');
+          scrollBtn.classList.remove('opacity-100');
+        }
+      }, { passive: true });
+
+      scrollBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       });
     </script>
   </body>
