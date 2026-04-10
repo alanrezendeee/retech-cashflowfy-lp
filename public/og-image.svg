@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#0a0a0a"/>
+
+  <!-- Grid pattern subtle -->
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(0,255,136,0.04)" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="glow" cx="50%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="rgba(0,255,136,0.12)"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <ellipse cx="600" cy="250" rx="500" ry="300" fill="url(#glow)"/>
+
+  <!-- Logo icon -->
+  <rect x="88" y="60" width="52" height="52" rx="12" fill="#00FF88"/>
+  <polyline points="97,99 107,87 117,91.5 126,81" fill="none" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M118 72h12v12" fill="none" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="126" y1="81" x2="130" y2="72" stroke="black" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Logo text -->
+  <text x="154" y="94" font-family="system-ui, sans-serif" font-weight="800" font-size="28" fill="white">Cash<tspan fill="#00FF88">Flowfy</tspan></text>
+
+  <!-- Badge -->
+  <rect x="88" y="148" width="242" height="32" rx="16" fill="rgba(0,255,136,0.08)" stroke="rgba(0,255,136,0.3)" stroke-width="1"/>
+  <circle cx="110" cy="164" r="4" fill="#00FF88"/>
+  <text x="124" y="169" font-family="system-ui, sans-serif" font-size="13" fill="#00FF88" font-weight="500" letter-spacing="1">BPO FINANCEIRO INTELIGENTE</text>
+
+  <!-- Headline -->
+  <text x="88" y="270" font-family="system-ui, sans-serif" font-weight="800" font-size="72" fill="white">Seu financeiro no</text>
+  <text x="88" y="360" font-family="system-ui, sans-serif" font-weight="800" font-size="72" fill="#00FF88">piloto automático.</text>
+
+  <!-- Subheadline -->
+  <text x="88" y="430" font-family="system-ui, sans-serif" font-size="24" fill="rgba(255,255,255,0.55)">SaaS + BPO humano + automação com IA.</text>
+  <text x="88" y="462" font-family="system-ui, sans-serif" font-size="24" fill="rgba(255,255,255,0.55)">Organize, execute e automatize seu financeiro.</text>
+
+  <!-- Stats -->
+  <rect x="88" y="510" width="130" height="72" rx="12" fill="rgba(17,17,17,0.8)" stroke="rgba(30,30,30,1)" stroke-width="1"/>
+  <text x="153" y="550" font-family="system-ui, sans-serif" font-weight="800" font-size="28" fill="#00FF88" text-anchor="middle">100%</text>
+  <text x="153" y="572" font-family="system-ui, sans-serif" font-size="13" fill="rgba(255,255,255,0.4)" text-anchor="middle">Digital</text>
+
+  <rect x="234" y="510" width="130" height="72" rx="12" fill="rgba(17,17,17,0.8)" stroke="rgba(30,30,30,1)" stroke-width="1"/>
+  <text x="299" y="550" font-family="system-ui, sans-serif" font-weight="800" font-size="28" fill="#00FF88" text-anchor="middle">24h</text>
+  <text x="299" y="572" font-family="system-ui, sans-serif" font-size="13" fill="rgba(255,255,255,0.4)" text-anchor="middle">Ativação</text>
+
+  <rect x="380" y="510" width="130" height="72" rx="12" fill="rgba(17,17,17,0.8)" stroke="rgba(30,30,30,1)" stroke-width="1"/>
+  <text x="445" y="550" font-family="system-ui, sans-serif" font-weight="800" font-size="28" fill="#00FF88" text-anchor="middle">0</text>
+  <text x="445" y="572" font-family="system-ui, sans-serif" font-size="13" fill="rgba(255,255,255,0.4)" text-anchor="middle">Stress</text>
+
+  <!-- Bottom neon line -->
+  <defs>
+    <linearGradient id="neon-line" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="transparent"/>
+      <stop offset="50%" stop-color="#00FF88"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </linearGradient>
+  </defs>
+  <line x1="0" y1="629" x2="1200" y2="629" stroke="url(#neon-line)" stroke-width="1"/>
+
+  <!-- URL -->
+  <text x="1112" y="590" font-family="system-ui, sans-serif" font-size="18" fill="rgba(255,255,255,0.25)" text-anchor="end">cashflowfy.com.br</text>
+</svg>

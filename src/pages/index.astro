@@ -39,13 +39,22 @@ const SITE_URL = "https://cashflowfy.com.br";
     <meta property="og:url" content={SITE_URL} />
     <meta property="og:title" content="CashFlowfy | BPO Financeiro Inteligente — Seu financeiro no piloto automático" />
     <meta property="og:description" content="SaaS + BPO humano + automação com IA. Nós organizamos, executamos e automatizamos seu financeiro — você só aprova." />
-    <meta property="og:image" content={`${SITE_URL}/og-image.png`} />
+    <meta property="og:image" content={`${SITE_URL}/og-image.svg`} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="CashFlowfy — BPO Financeiro Inteligente" />
     <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="CashFlowfy" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="CashFlowfy | BPO Financeiro Inteligente" />
     <meta name="twitter:description" content="Terceirize seu financeiro com tecnologia, BPO humano e automação com IA." />
+    <meta name="twitter:image" content={`${SITE_URL}/og-image.svg`} />
+    <meta name="twitter:image:alt" content="CashFlowfy — BPO Financeiro Inteligente" />
+
+    <!-- Author -->
+    <meta name="author" content="The Retech" />
 
     <!-- Canonical -->
     <link rel="canonical" href={SITE_URL} />
@@ -64,25 +73,105 @@ const SITE_URL = "https://cashflowfy.com.br";
     <!-- Google Tag Manager (placeholder) -->
     <!-- <script>(function(w,d,s,l,i){...})(window,document,'script','dataLayer','GTM-XXXXXX');</script> -->
 
-    <!-- Schema.org structured data -->
+    <!-- Schema.org: Service (BPO Financeiro) -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "CashFlowfy",
-        "description": "BPO Financeiro Inteligente — SaaS + BPO Humano + Automação com IA",
-        "applicationCategory": "BusinessApplication",
-        "operatingSystem": "Web",
-        "offers": {
-          "@type": "Offer",
-          "price": "497",
-          "priceCurrency": "BRL"
+        "@type": "Service",
+        "name": "CashFlowfy — BPO Financeiro Inteligente",
+        "description": "BPO Financeiro as a Service com plataforma SaaS, equipe humana especializada e automação com IA. Terceirize a gestão financeira da sua empresa — contas a pagar e receber, fluxo de caixa, cobranças e pipeline de receita.",
+        "url": "https://cashflowfy.com.br",
+        "serviceType": "BPO Financeiro",
+        "areaServed": {
+          "@type": "Country",
+          "name": "Brasil"
         },
         "provider": {
           "@type": "Organization",
           "name": "The Retech",
           "url": "https://theretech.com.br"
-        }
+        },
+        "offers": [
+          {
+            "@type": "Offer",
+            "name": "Plano Starter",
+            "price": "497",
+            "priceCurrency": "BRL",
+            "priceSpecification": { "@type": "UnitPriceSpecification", "price": "497", "priceCurrency": "BRL", "unitText": "MONTH" }
+          },
+          {
+            "@type": "Offer",
+            "name": "Plano Growth",
+            "price": "997",
+            "priceCurrency": "BRL",
+            "priceSpecification": { "@type": "UnitPriceSpecification", "price": "997", "priceCurrency": "BRL", "unitText": "MONTH" }
+          },
+          {
+            "@type": "Offer",
+            "name": "Plano Scale",
+            "price": "1997",
+            "priceCurrency": "BRL",
+            "priceSpecification": { "@type": "UnitPriceSpecification", "price": "1997", "priceCurrency": "BRL", "unitText": "MONTH" }
+          }
+        ]
+      }
+    </script>
+
+    <!-- Schema.org: FAQPage — gera rich snippet no Google -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Como funciona a ativação do CashFlowfy?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Em até 24 horas após a contratação, nosso time entra em contato, realiza o onboarding guiado e já começa a mapear toda a sua operação financeira. Você não precisa fazer nada além de nos dar acesso às informações necessárias."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Meus dados financeiros estão seguros no CashFlowfy?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sim. Todos os dados são criptografados em trânsito e em repouso. O acesso é controlado por permissão, e auditamos cada operação realizada. Seguimos as melhores práticas de segurança de dados."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Preciso trocar de banco para usar o CashFlowfy?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Não. O CashFlowfy se integra ao seu banco atual, seja ele qual for. Nenhuma migração bancária é necessária. Nosso time de onboarding realiza toda a configuração."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Posso cancelar o CashFlowfy a qualquer momento?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sim. Sem fidelidade, sem multa. Você pode cancelar a qualquer momento com aviso prévio de 30 dias."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "O que é o BPO humano do CashFlowfy na prática?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "É um time de profissionais financeiros especializados que executa os pagamentos, cobranças e conciliações da sua empresa no dia a dia — não é um chatbot ou automação genérica. São pessoas reais cuidando do seu financeiro."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "O pipeline de receita do CashFlowfy funciona com meu CRM?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sim. Integramos com os principais CRMs do mercado (HubSpot, Pipedrive, RD Station e outros). O time de onboarding realiza a conexão durante o processo de ativação."
+            }
+          }
+        ]
       }
     </script>
 
@@ -191,6 +280,78 @@ const SITE_URL = "https://cashflowfy.com.br";
         margin-left: auto;
       }
 
+      /* ── Shimmer no botão CTA primário ─────────────────── */
+      @keyframes shimmer {
+        0%   { transform: translateX(-150%) skewX(-15deg); }
+        100% { transform: translateX(250%)  skewX(-15deg); }
+      }
+      .btn-shimmer { position: relative; overflow: hidden; }
+      .btn-shimmer::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.25) 50%, transparent 100%);
+        transform: translateX(-150%) skewX(-15deg);
+      }
+      .btn-shimmer:hover::after { animation: shimmer 0.65s ease-in-out; }
+
+      /* ── Ticker marquee ─────────────────────────────────── */
+      @keyframes ticker {
+        0%   { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+      }
+      .ticker-track {
+        display: flex;
+        width: max-content;
+        animation: ticker 28s linear infinite;
+      }
+      .ticker-wrap:hover .ticker-track { animation-play-state: paused; }
+
+      /* ── FAQ accordion ──────────────────────────────────── */
+      .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1), padding 0.35s ease;
+      }
+      .faq-answer.open { max-height: 300px; }
+      .faq-icon { transition: transform 0.3s ease; }
+      .faq-icon.open { transform: rotate(45deg); }
+
+      /* ── Testimonial card ───────────────────────────────── */
+      .testimonial-card {
+        position: relative;
+      }
+      .testimonial-card::before {
+        content: '';
+        position: absolute;
+        inset: -1px;
+        border-radius: 1rem;
+        background: linear-gradient(135deg, rgba(0,255,136,0.15) 0%, transparent 60%);
+        z-index: 0;
+        pointer-events: none;
+      }
+
+      /* ── Navbar floating visual ─────────────────────────── */
+      .navbar-inner {
+        border-bottom: 1px solid rgba(255,255,255,0.04);
+        transition: background 0.3s ease, border-color 0.3s ease;
+      }
+      .navbar-inner.scrolled {
+        background: rgba(10,10,10,0.97);
+        border-color: rgba(0,255,136,0.12);
+      }
+
+      /* ── Announcement bar ───────────────────────────────── */
+      #announcement-bar {
+        transition: height 0.3s ease, opacity 0.3s ease;
+        overflow: hidden;
+      }
+      #announcement-bar.dismissed {
+        height: 0 !important;
+        opacity: 0;
+        pointer-events: none;
+      }
+
       @media (prefers-reduced-motion: reduce) {
         .fade-in {
           opacity: 1;
@@ -208,9 +369,25 @@ const SITE_URL = "https://cashflowfy.com.br";
   <body class="bg-[#0a0a0a] text-white overflow-x-hidden">
 
     <!-- =============================================
+         ANNOUNCEMENT BAR — Dismissível
+         ============================================= -->
+    <div id="announcement-bar" class="fixed top-0 left-0 right-0 z-[60] h-10 flex items-center justify-center bg-[#00FF88]/10 border-b border-[#00FF88]/20 px-8 text-sm font-medium text-[#00FF88]">
+      <span>
+        <svg viewBox="0 0 20 20" fill="none" class="w-3.5 h-3.5 inline mr-1.5 -mt-0.5" aria-hidden="true"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <strong>Pipeline de Receita</strong> — integrado ao fluxo de caixa.
+        <a href="#planos" class="underline underline-offset-2 hover:text-white transition-colors cursor-pointer ml-1">Ver planos</a>
+      </span>
+      <button id="dismiss-announcement" aria-label="Fechar aviso" class="absolute right-4 top-1/2 -translate-y-1/2 text-[#00FF88]/50 hover:text-[#00FF88] transition-colors cursor-pointer">
+        <svg viewBox="0 0 20 20" fill="none" class="w-4 h-4" aria-hidden="true">
+          <path d="M6 6l8 8M14 6l-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- =============================================
          NAVBAR — Sticky, translucent
          ============================================= -->
-    <header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-[#0a0a0a]/80">
+    <header id="site-header" class="fixed top-10 left-0 right-0 z-50 navbar-inner backdrop-blur-md bg-[#0a0a0a]/80 transition-[top] duration-300">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
         <!-- Logo -->
         <a href="/" aria-label="CashFlowfy - Início" class="flex items-center gap-2 cursor-pointer">
@@ -256,7 +433,7 @@ const SITE_URL = "https://cashflowfy.com.br";
          SEÇÃO 1: HERO — Extremamente forte
          H1 otimizado para SEO
          ============================================= -->
-    <section class="relative min-h-screen flex items-center pt-16 hero-glow grid-bg overflow-hidden" aria-labelledby="hero-heading">
+    <section class="relative min-h-screen flex items-center pt-[104px] hero-glow grid-bg overflow-hidden" aria-labelledby="hero-heading">
       <!-- Decorative blobs -->
       <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-[#00FF88]/5 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
 
@@ -314,7 +491,7 @@ const SITE_URL = "https://cashflowfy.com.br";
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#00FF88] text-black font-bold text-base hover:bg-[#00cc6a] transition-all duration-200 shadow-[0_0_20px_rgba(0,255,136,0.4)] hover:shadow-[0_0_30px_rgba(0,255,136,0.6)] cursor-pointer"
+            class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#00FF88] text-black font-bold text-base hover:bg-[#00cc6a] transition-all duration-200 shadow-[0_0_20px_rgba(0,255,136,0.4)] hover:shadow-[0_0_30px_rgba(0,255,136,0.6)] cursor-pointer btn-shimmer"
             aria-label="Quero organizar meu financeiro — falar no WhatsApp"
           >
             <svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5" aria-hidden="true">
@@ -343,13 +520,44 @@ const SITE_URL = "https://cashflowfy.com.br";
             { value: '0', label: 'Stress' },
           ].map((stat) => (
             <div class="text-center">
-              <div class="font-display font-bold text-2xl neon-text">{stat.value}</div>
+              <div class="font-display font-bold text-2xl neon-text" data-count-up data-target={stat.value}>{stat.value}</div>
               <div class="text-gray-500 text-xs mt-0.5">{stat.label}</div>
             </div>
           ))}
         </div>
       </div>
     </section>
+
+    <!-- =============================================
+         TICKER MARQUEE — Social proof / Fatos rápidos
+         ============================================= -->
+    <div class="ticker-wrap py-3.5 border-y border-[#00FF88]/15 bg-[#00FF88]/4 overflow-hidden" aria-hidden="true">
+      <div class="ticker-track gap-0">
+        {[
+          { icon: '✦', text: 'Ativação em 24 horas' },
+          { icon: '✦', text: '+50 empresas organizadas' },
+          { icon: '✦', text: 'BPO humano + IA' },
+          { icon: '✦', text: 'Sem fidelidade' },
+          { icon: '✦', text: '15% de receita recuperada em média' },
+          { icon: '✦', text: 'Aprovação de pagamentos pelo WhatsApp' },
+          { icon: '✦', text: 'Pipeline de receita integrado' },
+          { icon: '✦', text: 'Cancele a qualquer momento' },
+          { icon: '✦', text: 'Ativação em 24 horas' },
+          { icon: '✦', text: '+50 empresas organizadas' },
+          { icon: '✦', text: 'BPO humano + IA' },
+          { icon: '✦', text: 'Sem fidelidade' },
+          { icon: '✦', text: '15% de receita recuperada em média' },
+          { icon: '✦', text: 'Aprovação de pagamentos pelo WhatsApp' },
+          { icon: '✦', text: 'Pipeline de receita integrado' },
+          { icon: '✦', text: 'Cancele a qualquer momento' },
+        ].map((item) => (
+          <span class="inline-flex items-center gap-3 px-8 text-sm font-medium text-[#00FF88]/70 whitespace-nowrap shrink-0">
+            <span class="text-[#00FF88]/40 text-xs">{item.icon}</span>
+            {item.text}
+          </span>
+        ))}
+      </div>
+    </div>
 
     <!-- =============================================
          SEÇÃO 2: PROBLEMA — Dores reais do cliente
@@ -1068,6 +1276,132 @@ const SITE_URL = "https://cashflowfy.com.br";
     </section>
 
     <!-- =============================================
+         SEÇÃO DEPOIMENTOS — Prova social real
+         ============================================= -->
+    <section class="pt-16 pb-24 bg-[#0d0d0d]" aria-labelledby="depoimentos-heading">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-16 fade-in">
+          <span class="badge-neon mb-4 inline-flex">O que dizem os clientes</span>
+          <h2 id="depoimentos-heading" class="font-display font-bold text-3xl sm:text-4xl md:text-5xl leading-tight mb-4">
+            Empresas que já viraram<br />
+            <span class="neon-text">o jogo financeiro</span>
+          </h2>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {[
+            {
+              quote: 'Antes do CashFlowfy, eu perdia em média R$\u00a08.000/mês em cobranças que simplesmente não fazíamos. Em 30 dias eles organizaram tudo. O ROI foi imediato.',
+              name: 'Ana Luíza Ferreira',
+              role: 'Diretora, Agência de Marketing Digital',
+              initials: 'AL',
+              color: 'bg-pink-500',
+            },
+            {
+              quote: 'Gastava 15 horas por semana dentro de planilhas. Hoje gasto zero. O time executa tudo e eu só aprovo no WhatsApp. É exatamente o que eu precisava.',
+              name: 'Ricardo Borges',
+              role: 'CEO, Empresa de Tecnologia',
+              initials: 'RB',
+              color: 'bg-blue-500',
+            },
+            {
+              quote: 'A visibilidade do fluxo de caixa nos salvou de uma crise séria. Vimos o problema 20 dias antes de acontecer e conseguimos agir a tempo.',
+              name: 'Marina Costa',
+              role: 'Sócia-fundadora, Clínica de Saúde',
+              initials: 'MC',
+              color: 'bg-[#00FF88]',
+            },
+          ].map((t, i) => (
+            <div class="testimonial-card bg-[#111111] border border-[#1e1e1e] rounded-2xl p-6 flex flex-col gap-4 card-hover fade-in" style={`animation-delay: ${i * 0.1}s`}>
+              <!-- Stars -->
+              <div class="flex gap-1" aria-label="5 estrelas">
+                {Array(5).fill(null).map(() => (
+                  <svg viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4 text-[#00FF88]" aria-hidden="true">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                ))}
+              </div>
+              <!-- Quote -->
+              <p class="text-gray-300 text-sm leading-relaxed flex-1 relative z-10">"{t.quote}"</p>
+              <!-- Author -->
+              <div class="flex items-center gap-3 relative z-10">
+                <div class={`w-9 h-9 rounded-full ${t.color} flex items-center justify-center shrink-0`}>
+                  <span class="text-xs font-bold text-black">{t.initials}</span>
+                </div>
+                <div>
+                  <p class="text-white text-sm font-semibold">{t.name}</p>
+                  <p class="text-gray-500 text-xs">{t.role}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================
+         SEÇÃO FAQ — Perguntas frequentes
+         ============================================= -->
+    <section class="pt-16 pb-24" aria-labelledby="faq-heading">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-16 fade-in">
+          <span class="badge-neon mb-4 inline-flex">Dúvidas frequentes</span>
+          <h2 id="faq-heading" class="font-display font-bold text-3xl sm:text-4xl md:text-5xl leading-tight">
+            Perguntas e<br />
+            <span class="neon-text">respostas</span>
+          </h2>
+        </div>
+
+        <div class="space-y-3 fade-in">
+          {[
+            {
+              q: 'Como funciona a ativação?',
+              a: 'Em até 24 horas após a contratação, nosso time entra em contato, realiza o onboarding guiado e já começa a mapear toda a sua operação financeira. Você não precisa fazer nada além de nos dar acesso às informações necessárias.',
+            },
+            {
+              q: 'Meus dados financeiros estão seguros?',
+              a: 'Sim. Todos os dados são criptografados em trânsito e em repouso. O acesso é controlado por permissão, e auditamos cada operação realizada. Seguimos as melhores práticas de segurança de dados.',
+            },
+            {
+              q: 'Preciso trocar de banco para usar o CashFlowfy?',
+              a: 'Não. O CashFlowfy se integra ao seu banco atual, seja ele qual for. Nenhuma migração bancária é necessária. Nosso time de onboarding realiza toda a configuração.',
+            },
+            {
+              q: 'Posso cancelar a qualquer momento?',
+              a: 'Sim. Sem fidelidade, sem multa. Você pode cancelar a qualquer momento com aviso prévio de 30 dias. Simples assim.',
+            },
+            {
+              q: 'O que é o "BPO humano" na prática?',
+              a: 'É um time de profissionais financeiros especializados que executa os pagamentos, cobranças e conciliações da sua empresa no dia a dia — não é um chatbot ou automação genérica. São pessoas reais cuidando do seu financeiro.',
+            },
+            {
+              q: 'O pipeline de receita funciona com meu CRM?',
+              a: 'Sim. Integramos com os principais CRMs do mercado (HubSpot, Pipedrive, RD Station e outros). O time de onboarding realiza a conexão durante o processo de ativação.',
+            },
+          ].map((item, i) => (
+            <div class="bg-[#111111] border border-[#1e1e1e] rounded-2xl overflow-hidden card-hover">
+              <button
+                class="w-full text-left px-6 py-5 flex items-center justify-between gap-4 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00FF88]/50"
+                data-faq-btn
+                aria-expanded="false"
+              >
+                <span class="font-display font-semibold text-white text-sm sm:text-base">{item.q}</span>
+                <span class="faq-icon w-5 h-5 shrink-0 text-[#00FF88]" aria-hidden="true">
+                  <svg viewBox="0 0 20 20" fill="none" class="w-5 h-5">
+                    <path d="M10 4v12M4 10h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  </svg>
+                </span>
+              </button>
+              <div class="faq-answer px-6">
+                <p class="text-gray-400 text-sm leading-relaxed pb-5">{item.a}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================
          SEÇÃO 9: CTA FINAL — Forte e direto
          ============================================= -->
     <section class="pt-16 pb-32 relative overflow-hidden" aria-labelledby="cta-final-heading">
@@ -1093,7 +1427,7 @@ const SITE_URL = "https://cashflowfy.com.br";
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-10 py-5 rounded-xl bg-[#00FF88] text-black font-bold text-lg hover:bg-[#00cc6a] transition-all duration-200 shadow-[0_0_30px_rgba(0,255,136,0.5)] hover:shadow-[0_0_50px_rgba(0,255,136,0.7)] cursor-pointer"
+            class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-10 py-5 rounded-xl bg-[#00FF88] text-black font-bold text-lg hover:bg-[#00cc6a] transition-all duration-200 shadow-[0_0_30px_rgba(0,255,136,0.5)] hover:shadow-[0_0_50px_rgba(0,255,136,0.7)] cursor-pointer btn-shimmer"
             aria-label="Quero falar no WhatsApp com um especialista do CashFlowfy"
           >
             <svg viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6" aria-hidden="true">
@@ -1203,7 +1537,7 @@ const SITE_URL = "https://cashflowfy.com.br";
          JavaScript: Scroll fade-in + intersection observer
          ============================================= -->
     <script>
-      // Intersection Observer para animações de scroll
+      // ── Intersection Observer — scroll fade-in ──────────────────────
       const observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
@@ -1215,25 +1549,111 @@ const SITE_URL = "https://cashflowfy.com.br";
         },
         { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
       );
+      document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
 
-      document.querySelectorAll('.fade-in').forEach((el) => {
-        observer.observe(el);
-      });
+      // ── Announcement bar dismiss ─────────────────────────────────────
+      const announcementBar = document.getElementById('announcement-bar');
+      const siteHeader = document.getElementById('site-header');
+      const dismissBtn = document.getElementById('dismiss-announcement');
+      if (dismissBtn && announcementBar && siteHeader) {
+        dismissBtn.addEventListener('click', () => {
+          announcementBar.classList.add('dismissed');
+          setTimeout(() => {
+            siteHeader.classList.remove('top-10');
+            siteHeader.classList.add('top-0');
+            // Adjust hero padding
+            const hero = document.querySelector('[data-hero-section]');
+            if (hero) {
+              hero.style.paddingTop = '4rem'; // 64px = pt-16
+            }
+          }, 310);
+        });
+      }
 
-      // Scroll-to-top button
+      // ── Navbar scroll-aware (tint on scroll) ────────────────────────
+      const navbarInner = document.getElementById('site-header');
+      if (navbarInner) {
+        window.addEventListener('scroll', () => {
+          if (window.scrollY > 60) {
+            navbarInner.classList.add('scrolled');
+          } else {
+            navbarInner.classList.remove('scrolled');
+          }
+        }, { passive: true });
+      }
+
+      // ── Scroll-to-top button ─────────────────────────────────────────
       const scrollBtn = document.getElementById('scroll-top');
-      window.addEventListener('scroll', () => {
-        if (window.scrollY > 400) {
-          scrollBtn.classList.remove('opacity-0', 'pointer-events-none');
-          scrollBtn.classList.add('opacity-100');
-        } else {
-          scrollBtn.classList.add('opacity-0', 'pointer-events-none');
-          scrollBtn.classList.remove('opacity-100');
-        }
-      }, { passive: true });
+      if (scrollBtn) {
+        window.addEventListener('scroll', () => {
+          if (window.scrollY > 400) {
+            scrollBtn.classList.remove('opacity-0', 'pointer-events-none');
+            scrollBtn.classList.add('opacity-100');
+          } else {
+            scrollBtn.classList.add('opacity-0', 'pointer-events-none');
+            scrollBtn.classList.remove('opacity-100');
+          }
+        }, { passive: true });
+        scrollBtn.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
 
-      scrollBtn.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+      // ── Count-up animation for hero stats ───────────────────────────
+      function animateCountUp(el: HTMLElement) {
+        const target = el.dataset.target || '';
+        const isPercent = target.endsWith('%');
+        const isH = target.endsWith('h');
+        const isZero = target === '0';
+        if (isZero) return; // static
+        const num = parseInt(target.replace(/\D/g, ''), 10);
+        if (isNaN(num)) return;
+        let start = 0;
+        const duration = 1200;
+        const step = 16;
+        const steps = Math.ceil(duration / step);
+        let current = 0;
+        const increment = num / steps;
+        const timer = setInterval(() => {
+          current += increment;
+          if (current >= num) {
+            current = num;
+            clearInterval(timer);
+          }
+          el.textContent = Math.floor(current) + (isPercent ? '%' : isH ? 'h' : '');
+        }, step);
+      }
+
+      const statObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            animateCountUp(entry.target as HTMLElement);
+            statObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+
+      document.querySelectorAll('[data-count-up]').forEach((el) => statObserver.observe(el));
+
+      // ── FAQ accordion ────────────────────────────────────────────────
+      document.querySelectorAll('[data-faq-btn]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const answer = btn.nextElementSibling as HTMLElement;
+          const icon = btn.querySelector('.faq-icon');
+          const isOpen = answer?.classList.contains('open');
+
+          // Close all
+          document.querySelectorAll('.faq-answer').forEach((a) => a.classList.remove('open'));
+          document.querySelectorAll('.faq-icon').forEach((ic) => ic.classList.remove('open'));
+          document.querySelectorAll('[data-faq-btn]').forEach((b) => b.setAttribute('aria-expanded', 'false'));
+
+          // Open clicked (if it was closed)
+          if (!isOpen && answer && icon) {
+            answer.classList.add('open');
+            icon.classList.add('open');
+            btn.setAttribute('aria-expanded', 'true');
+          }
+        });
       });
     </script>
   </body>
