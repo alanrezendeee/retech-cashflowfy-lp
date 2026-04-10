@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#0a0a0a"/>
+
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(0,255,136,0.035)" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="glow-l" cx="25%" cy="50%" r="36%">
+      <stop offset="0%" stop-color="rgba(0,255,136,0.09)"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+    <radialGradient id="glow-r" cx="75%" cy="46%" r="42%">
+      <stop offset="0%" stop-color="rgba(0,255,136,0.07)"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+    <linearGradient id="divider-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="transparent"/>
+      <stop offset="22%"  stop-color="rgba(0,255,136,0.32)"/>
+      <stop offset="78%"  stop-color="rgba(0,255,136,0.32)"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </linearGradient>
+    <linearGradient id="neon-h" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="transparent"/>
+      <stop offset="50%"  stop-color="#00FF88"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <rect width="1200" height="630" fill="url(#glow-l)"/>
+  <rect width="1200" height="630" fill="url(#glow-r)"/>
+
+  <!-- ═══════════════════════════════════════
+       LEFT COLUMN — Brand / Logo
+       center: x=300, zone: 0–600
+       ═══════════════════════════════════════ -->
+
+  <!-- Icon soft glow -->
+  <ellipse cx="300" cy="257" rx="72" ry="58" fill="rgba(0,255,136,0.06)"/>
+
+  <!-- Icon container: 80×80 at (260, 217) -->
+  <rect x="260" y="217" width="80" height="80" rx="18" fill="#00FF88"/>
+
+  <!--
+    Sparkline scaled to 54×54 inner area (13px padding), offset (273, 230)
+    Original viewBox 0 0 24 24 → scale 2.25
+    polyline "2,17 7,11 12,13.5 16.5,7"
+  -->
+  <polyline
+    points="277.5,268.25 288.75,254.75 300,260.38 310.13,245.75"
+    fill="none" stroke="black" stroke-width="4.5"
+    stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Arrow "M13.5 4.5H21V12" -->
+  <path d="M303.38 240.13H320.25V257" fill="none" stroke="black"
+    stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="310.13" y1="245.75" x2="320.25" y2="240.13"
+    stroke="black" stroke-width="4.5" stroke-linecap="round"/>
+
+  <!-- Wordmark -->
+  <text x="300" y="352"
+    font-family="system-ui, -apple-system, BlinkMacSystemFont, sans-serif"
+    font-weight="800" font-size="44" fill="white" text-anchor="middle">Cash<tspan fill="#00FF88">Flowfy</tspan></text>
+
+  <!-- Badge "BPO FINANCEIRO INTELIGENTE" -->
+  <!-- rect centered at x=300, width=268 → x=166 -->
+  <rect x="166" y="370" width="268" height="28" rx="14"
+    fill="rgba(0,255,136,0.07)" stroke="rgba(0,255,136,0.28)" stroke-width="1"/>
+  <circle cx="188" cy="384" r="4" fill="#00FF88"/>
+  <text x="202" y="389"
+    font-family="system-ui, sans-serif"
+    font-size="11" fill="#00FF88" font-weight="500" letter-spacing="0.9">BPO FINANCEIRO INTELIGENTE</text>
+
+  <!-- ═══════════════════════════════════════
+       DIVIDER
+       ═══════════════════════════════════════ -->
+  <line x1="600" y1="108" x2="600" y2="522" stroke="url(#divider-grad)" stroke-width="1"/>
+
+  <!-- ═══════════════════════════════════════
+       RIGHT COLUMN — Headline
+       center: x=900, zone: 600–1200
+       ═══════════════════════════════════════ -->
+
+  <!-- Headline line 1 -->
+  <text x="900" y="248"
+    font-family="system-ui, -apple-system, BlinkMacSystemFont, sans-serif"
+    font-weight="800" font-size="52" fill="white" text-anchor="middle">Seu financeiro no</text>
+
+  <!-- Headline line 2 — neon -->
+  <text x="900" y="316"
+    font-family="system-ui, -apple-system, BlinkMacSystemFont, sans-serif"
+    font-weight="800" font-size="52" fill="#00FF88" text-anchor="middle">piloto automático.</text>
+
+  <!-- Subtitle -->
+  <text x="900" y="375"
+    font-family="system-ui, sans-serif"
+    font-size="20" fill="rgba(255,255,255,0.38)" text-anchor="middle">SaaS + BPO humano + automação com IA.</text>
+
+  <!-- URL pill -->
+  <rect x="762" y="408" width="276" height="40" rx="20"
+    fill="rgba(0,255,136,0.07)" stroke="rgba(0,255,136,0.22)" stroke-width="1"/>
+  <circle cx="787" cy="428" r="4" fill="#00FF88"/>
+  <text x="800" y="433"
+    font-family="system-ui, sans-serif"
+    font-size="15" fill="rgba(255,255,255,0.55)" font-weight="500">cashflowfy.com.br</text>
+
+  <!-- Bottom neon line -->
+  <line x1="0" y1="629" x2="1200" y2="629" stroke="url(#neon-h)" stroke-width="1"/>
+
+</svg>
